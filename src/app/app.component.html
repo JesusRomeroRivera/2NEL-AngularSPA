@@ -1,15 +1,37 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <button mat-icon-button>
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>Learning Center</span>
-    <span class="default-spacer"></span>
-    <div>
-      <a mat-flat-button color="primary" routerLink="/" routerLinkActive="active">Home</a>
-      <a mat-flat-button color="primary" routerLink="/students" routerLinkActive="active">Students</a>
-      <a mat-flat-button color="primary" routerLink="/about" routerLinkActive="active">About</a>
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
+<header style="box-sizing: border-box; width: 100vw; --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);">
+  <nav>
+    <nav style="display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; background-color: white; padding: 15px">
+      <div style="display: flex; align-items: center; flex-shrink: 0; color: black;
+      margin-right: 15px;">
+        <img style="width: 40px; height: auto;" src="../assets/logo.png" alt="Logo">
+        <a
+          routerLink="/" routerLinkActive="active"
+          style="font-size: 18.75px;
+          line-height: 22.5px; letter-spacing: -0.05em; margin-left: 8px;"
+          class="header--title font-semibold tracking-tight"
+          >2NEL</a
+        >
+      </div>
+      <div class="">
+        <div style="display: flex; gap: 20px; align-items: center; margin-right: 10px;" class="flex gap-8 items-center mr-4">
+          <a routerLink="/memberships" routerLinkActive="active">Membresías</a>
+          <a routerLink="/about" routerLinkActive="active">Nosotros</a>
+          <a routerLink="/Login" routerLinkActive="active">Iniciar Sesión</a>
+          <a routerLink="/Register"
+            ><button
+           
+            class="button black"
+        >
+            <p  style="margin: 0; font-size: 12.5px;line-height: 17.5px;">
+                Regístrate
+            </p>
+          </button></a
+          >
+        </div>
+      </div>
+    </nav>
+  </nav>
+</header>
 <router-outlet></router-outlet>

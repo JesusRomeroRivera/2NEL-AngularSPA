@@ -1,3 +1,35 @@
 .default-spacer {
   flex: 1 1 auto;
 }
+
+.button {
+  font-family: var(--principal-font);
+  padding: 0.9rem 4.5rem;
+  border: 0;
+  border-radius: 3rem;
+}
+.black {
+  background-color: black;
+  color: white;
+}
+.withBorder {
+  background-color: white;
+  color: black;
+  border: 3px solid black;
+}
+.white {
+  background-color: white;
+  color: black;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+header {
+  height: auto;
+  font-size: 12.5px;
+}
+.header--title {
+  font-weight: 700;
+  font-family: var(--title-font);
+}

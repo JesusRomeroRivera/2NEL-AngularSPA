@@ -1,0 +1,21 @@
+
+
+.button {
+    font-family: var(--principal-font);
+    padding: 0.9rem 4.5rem;
+    border: 0;
+    border-radius: 3rem;
+  }
+  .black {
+    background-color: black;
+    color: white;
+  }
+  .withBorder {
+    background-color: white;
+    color: black;
+    border: 3px solid black;
+  }
+  .white {
+    background-color: white;
+    color: black;
+  }

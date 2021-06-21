@@ -1,6 +1,65 @@
-table {
-  width: 100%;
+
+.button {
+  font-family: var(--principal-font);
+  padding: 9px 45px;
+  border: 0;
+  border-radius: 30px;
 }
-tr.editable-row {
-  background-color: lightcyan;
+.black {
+  background-color: black;
+  color: white;
+}
+.withBorder {
+  background-color: white;
+  color: black;
+  border: 3px solid black;
+}
+.white {
+  background-color: white;
+  color: black;
+}
+
+.cardsContainer {
+  width: 100vw;
+  height: 100%;
+}
+.membershipData {
+  width: 100vw;
+  height: 1000px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+.theCard {
+  width: 70vw;
+  height: 200px;
+}
+.theImg {
+  width: 100vw;
+  height: auto;
+  background-repeat: no-repeat;
+}
+.first {
+  background-image: url("../../../assets/membership-1.png");
+  background-size: 100vw auto;
+}
+.second {
+  background-image: url("../../../assets/membership-2.png");
+  background-size: 100vw auto;
+}
+.third {
+  background-image: url("../../../assets/membership-3.png");
+  background-size: 100vw auto;
+}
+.text-title {
+  font-family: var(--principal-font);
+  font-size: 40px;
+  color: white;
+  text-align: center;
+}
+.text-text {
+  margin-top: 10px;
+  font-family: var(--text-font);
+  font-size: 16px;
+  color: white;
+  text-align: center;
 }

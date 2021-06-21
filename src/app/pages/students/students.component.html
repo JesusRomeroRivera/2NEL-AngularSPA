@@ -1,70 +1,326 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>Students</mat-card-title>
-    <mat-card-subtitle>{{ isEditMode ? 'Edit Student' : 'Add new Student' }}</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <mat-grid-list cols="2" rowHeight="100px">
-      <mat-grid-tile>
-        <form (submit)="onSubmit()" #studentForm="ngForm">
-          <mat-form-field>
-            <input matInput placeholder="Name" name="name" required [(ngModel)]="studentData.name">
-          </mat-form-field>
-          <mat-form-field>
-            <input matInput placeholder="Age" name="age" type="number" required [(ngModel)]="studentData.age">
-          </mat-form-field>
-          <mat-form-field>
-            <input matInput placeholder="Address" name="address" required [(ngModel)]="studentData.address">
-          </mat-form-field>
-          <ng-container *ngIf="isEditMode; else elseTemplate">
-            <button mat-button color="primary" style="text-transform:uppercase">Update</button>
-            <button mat-button style="text-transform:uppercase" color="warn" (click)="cancelEdit()">Cancel</button>
-          </ng-container>
-          <ng-template #elseTemplate>
-            <button mat-button color="primary" style="text-transform: uppercase">Add</button>
-          </ng-template>
-        </form>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <mat-form-field>
-          <mat-label>Filter</mat-label>
-          <input matInput (keyup)="applyFilter($event)" placeholder="Ex.John Doe" #input>
-        </mat-form-field>
-      </mat-grid-tile>
-    </mat-grid-list>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> #Id </th>
-        <td mat-cell *matCellDef="let element"> {{ element.id }}</td>
-      </ng-container>
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let element"> {{ element.name }}</td>
-      </ng-container>
-      <ng-container matColumnDef="age">
-        <th mat-header-cell *matHeaderCellDef> Age </th>
-        <td mat-cell *matCellDef="let element"> {{ element.age }}</td>
-      </ng-container>
-      <ng-container matColumnDef="address">
-        <th mat-header-cell *matHeaderCellDef> Address </th>
-        <td mat-cell *matCellDef="let element"> {{ element.address }}</td>
-      </ng-container>
-      <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef> Actions </th>
-        <td mat-cell *matCellDef="let element">
-          <a href="javascript:void(0)"  (click)="editItem(element)"><mat-icon inline aria-hidden="false" aria-label="Edit" style="padding-right: 10px;">edit</mat-icon></a>
-          <a href="javascript:void(0)"  (click)="navigateToEditStudent(element.id)"><mat-icon inline aria-hidden="false" aria-label="Edit" style="padding-right: 10px;">details</mat-icon></a>
-          <a href="javascript:void(0)" (click)="deleteItem(element.id)"><mat-icon inline aria-hidden="false" aria-label="Delete">delete</mat-icon></a>
-        </td>
-      </ng-container>
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"
-          [ngClass]="{'editable-row': studentData.id === row.id}"></tr>
-    </table>
-    <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
-  </mat-card-content>
-  <mat-card-actions>
-    <a mat-button style="text-transform: uppercase" color="primary" (click)="navigateToAddStudent()">Add Student</a>
-    <a mat-button style="text-transform: uppercase" color="primary" (click)="refresh()">Reload</a>
-  </mat-card-actions>
-</mat-card>
+<div style="display: flex; flex-direction: column; align-items: center; width: 100vw;" class="flex-col items-center">
+  <section
+        style="background: url('../../assets/messageBackground-4.png'); display: flex; flex-direction: column; 
+        justify-content: center; align-items: center; width: 100vw; 
+            background-size: 1500px auto;
+            background-position: center;
+            height: 500px;
+            font-family: var(--principal-font);
+            font-size: 70px;
+            line-height: 1;"  
+    >
+        <p style="color: white; text-align: center; 
+        padding: 0 200px;">
+            El éxito llega cuando tus sueños son más grandes que tus
+            excusas
+        </p>
+        <button
+           
+            class="button black"
+        >
+            <p  style="margin: 0">
+                Regístrate
+            </p>
+        </button>
+    </section>
+    <div style="width: 100vw" class=" membershipData">
+      <div
+      style="display: flex; justify-content: center; align-items: flex-end;"
+        class="theImg first"
+        
+      >
+        <div style="background-color: black; padding-left: 25px;
+        padding-right: 25px; padding-top: 15px;
+padding-bottom: 15px; display: flex; flex-direction: column; justify-content: center;" class="theCard">
+          <h1 class="text-title">Comienza tu propia startup</h1>
+          <p class="text-text">Crea tu propia StartUp y dala a conocer a nuestra comunidad - Membresía para emprendedores. Puedes crear StartUps ilimitadas y subir información adicional.</p>
+        </div>
+      </div>
+      <div style="width: 100vw; box-sizing: border-box; display: flex; gap: 25px; padding-left: 100px;
+      padding-right: 100px; padding-top: 50px;
+padding-bottom: 50px;" class="cardsContainer">
+        <div class="theCard">
+          <div style="background-color: black; display: flex; justify-content: center; 
+          align-items: center;
+          padding: 25px;" class="theTitle">
+            <h1 style="text-align: center; font-size: 40px; 
+            color: white;
+            font-family: var(--principal-font);">Membresía <br /> Free</h1>
+          </div>
+          <div style="background-color: white; padding: 15px;" class="theText">
+            -30 tags para el perfil <br />
+            -Visualizar más información de 5 StartUps que este elija <br />
+            -30 perfiles de StartUps en favoritos <br />
+            -Solicitudes con menor prioridad <br />
+            -Sin foto de portada personalizada
+          </div>
+          <div style="background-color: white; padding: 15px; justify-content: center;
+          align-items: center; padding: 10px;" class="theBotton">
+            <button
+           
+            class="button black"
+        >
+            <p  style="margin: 0">
+                Obtener Free
+            </p>
+        </button>
+          </div>
+        </div>
+        <div class="theCard">
+          <div style="background-color: black; display: flex; justify-content: center; 
+          align-items: center;
+          padding: 25px;" class="theTitle">
+            <h1 style="text-align: center; font-size: 40px; 
+            color: white;
+            font-family: var(--principal-font);">Membresía <br /> Free</h1>
+          </div>
+          <div style="background-color: white; padding: 15px;" class="theText">
+            -50 tags para el perfil <br />
+            -Visualizar más información de 10 StartUps que este elija <br />
+            -60 perfiles de StartUps en favoritos <br />
+            -Solicitudes con mayor prioridad <br />
+            -Foto de portada personalizada
+          </div>
+          <div style="background-color: white; padding: 15px; justify-content: center;
+          align-items: center; padding: 10px;" class="theBotton">
+            <button
+           
+            class="button black"
+        >
+            <p  style="margin: 0">
+                Obtener Free
+            </p>
+        </button>
+          </div>
+        </div>
+        <div class="theCard">
+          <div style="background-color: black; display: flex; justify-content: center; 
+          align-items: center;
+          padding: 25px;" class="theTitle">
+            <h1 style="text-align: center; font-size: 40px; 
+            color: white;
+            font-family: var(--principal-font);">Membresía <br /> Free</h1>
+          </div>
+          <div style="background-color: white; padding: 15px;" class="theText">
+            -80 tags para el perfil <br />
+            -Visualizar información número ilimitado de StartUps
+            <br />
+            -Número ilimitado de StartUps favoritas <br />
+            -Solicitudes con máxima prioridad <br />
+            -Foto de portada personalizada
+          </div>
+          <div style="background-color: white; padding: 15px; justify-content: center;
+          align-items: center; padding: 10px;" class="theBotton">
+            <button
+           
+            class="button black"
+        >
+            <p  style="margin: 0">
+                Obtener Free
+            </p>
+        </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="width: 100vw" class=" membershipData">
+      <div
+      style="display: flex; justify-content: center; align-items: flex-end;"
+        class="theImg second"
+        
+      >
+        <div style="background-color: black; padding-left: 25px;
+        padding-right: 25px; padding-top: 15px;
+padding-bottom: 15px; display: flex; flex-direction: column; justify-content: center;" class="theCard">
+          <h1 class="text-title">Sé parte del comienzo de una StartUp</h1>
+          <p class="text-text">Apoya a las StartUps que te parezcan más interesantes - Membresía para Colaboradores. Postula a un número ilimitado de StartUp que cumplan con tus intereses.</p>
+        </div>
+      </div>
+      <div style="width: 100vw; box-sizing: border-box; display: flex; gap: 25px; padding-left: 100px;
+      padding-right: 100px; padding-top: 50px;
+padding-bottom: 50px;" class="cardsContainer">
+        <div class="theCard">
+          <div style="background-color: black; display: flex; justify-content: center; 
+          align-items: center;
+          padding: 25px;" class="theTitle">
+            <h1 style="text-align: center; font-size: 40px; 
+            color: white;
+            font-family: var(--principal-font);">Membresía <br /> Free</h1>
+          </div>
+          <div style="background-color: white; padding: 15px;" class="theText">
+            -30 tags para el perfil <br />
+            -Visualizar más información de 5 StartUps que este elija <br />
+            -30 perfiles de StartUps en favoritos <br />
+            -Solicitudes con menor prioridad <br />
+            -Sin foto de portada personalizada
+          </div>
+          <div style="background-color: white; padding: 15px; justify-content: center;
+          align-items: center; padding: 10px;" class="theBotton">
+            <button
+           
+            class="button black"
+        >
+            <p  style="margin: 0">
+                Obtener Free
+            </p>
+        </button>
+          </div>
+        </div>
+        <div class="theCard">
+          <div style="background-color: black; display: flex; justify-content: center; 
+          align-items: center;
+          padding: 25px;" class="theTitle">
+            <h1 style="text-align: center; font-size: 40px; 
+            color: white;
+            font-family: var(--principal-font);">Membresía <br /> Pro</h1>
+          </div>
+          <div style="background-color: white; padding: 15px;" class="theText">
+            -50 tags para el perfil <br />
+            -Visualizar más información de 10 StartUps que este elija <br />
+            -60 perfiles de StartUps en favoritos <br />
+            -Solicitudes con mayor prioridad <br />
+            -Foto de portada personalizada
+          </div>
+          <div style="background-color: white; padding: 15px; justify-content: center;
+          align-items: center; padding: 10px;" class="theBotton">
+            <button
+           
+            class="button black"
+        >
+            <p  style="margin: 0">
+                Obtener Pro
+            </p>
+        </button>
+          </div>
+        </div>
+        <div class="theCard">
+          <div style="background-color: black; display: flex; justify-content: center; 
+          align-items: center;
+          padding: 25px;" class="theTitle">
+            <h1 style="text-align: center; font-size: 40px; 
+            color: white;
+            font-family: var(--principal-font);">Membresía <br /> Premium</h1>
+          </div>
+          <div style="background-color: white; padding: 15px;" class="theText">
+            -80 tags para el perfil <br />
+            -Visualizar información número ilimitado de StartUps
+            <br />
+            -Número ilimitado de StartUps favoritas <br />
+            -Solicitudes con máxima prioridad <br />
+            -Foto de portada personalizada
+          </div>
+          <div style="background-color: white; padding: 15px; justify-content: center;
+          align-items: center; padding: 10px;" class="theBotton">
+            <button
+           
+            class="button black"
+        >
+            <p  style="margin: 0">
+                Obtener Premium
+            </p>
+        </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="width: 100vw" class=" membershipData">
+      <div
+      style="display: flex; justify-content: center; align-items: flex-end;"
+        class="theImg third"
+        
+      >
+        <div style="background-color: black; padding-left: 25px;
+        padding-right: 25px; padding-top: 15px;
+padding-bottom: 15px; display: flex; flex-direction: column; justify-content: center;" class="theCard">
+          <h1 class="text-title">Invierte en la StartUp que quieres ver crecer</h1>
+          <p class="text-text">Invierte en las StartUps que cumplan con tus intereses - Membresía para Inversionistas. Visualiza información adicional de un número ilimitado de StartUps.</p>
+        </div>
+      </div>
+      <div style="width: 100vw; box-sizing: border-box; display: flex; gap: 25px; padding-left: 100px;
+      padding-right: 100px; padding-top: 50px;
+padding-bottom: 50px;" class="cardsContainer">
+        <div class="theCard">
+          <div style="background-color: black; display: flex; justify-content: center; 
+          align-items: center;
+          padding: 25px;" class="theTitle">
+            <h1 style="text-align: center; font-size: 40px; 
+            color: white;
+            font-family: var(--principal-font);">Membresía <br /> Free</h1>
+          </div>
+          <div style="background-color: white; padding: 15px;" class="theText">
+            -30 tags para el perfil <br />
+            -Visualizar más información de 5 StartUps que este elija <br />
+            -30 perfiles de StartUps en favoritos <br />
+            -Solicitudes con menor prioridad <br />
+            -Sin foto de portada personalizada
+          </div>
+          <div style="background-color: white; padding: 15px; justify-content: center;
+          align-items: center; padding: 10px;" class="theBotton">
+            <button
+           
+            class="button black"
+        >
+            <p  style="margin: 0">
+                Obtener Free
+            </p>
+        </button>
+          </div>
+        </div>
+        <div class="theCard">
+          <div style="background-color: black; display: flex; justify-content: center; 
+          align-items: center;
+          padding: 25px;" class="theTitle">
+            <h1 style="text-align: center; font-size: 40px; 
+            color: white;
+            font-family: var(--principal-font);">Membresía <br /> Pro</h1>
+          </div>
+          <div style="background-color: white; padding: 15px;" class="theText">
+            -50 tags para el perfil <br />
+            -Visualizar más información de 10 StartUps que este elija <br />
+            -60 perfiles de StartUps en favoritos <br />
+            -Solicitudes con mayor prioridad <br />
+            -Foto de portada personalizada
+          </div>
+          <div style="background-color: white; padding: 15px; justify-content: center;
+          align-items: center; padding: 10px;" class="theBotton">
+            <button
+           
+            class="button black"
+        >
+            <p  style="margin: 0">
+                Obtener Pro
+            </p>
+        </button>
+          </div>
+        </div>
+        <div class="theCard">
+          <div style="background-color: black; display: flex; justify-content: center; 
+          align-items: center;
+          padding: 25px;" class="theTitle">
+            <h1 style="text-align: center; font-size: 40px; 
+            color: white;
+            font-family: var(--principal-font);">Membresía <br /> Premium</h1>
+          </div>
+          <div style="background-color: white; padding: 15px;" class="theText">
+            -80 tags para el perfil <br />
+            -Visualizar información número ilimitado de StartUps
+            <br />
+            -Número ilimitado de StartUps favoritas <br />
+            -Solicitudes con máxima prioridad <br />
+            -Foto de portada personalizada
+          </div>
+          <div style="background-color: white; padding: 15px; justify-content: center;
+          align-items: center; padding: 10px;" class="theBotton">
+            <button
+           
+            class="button black"
+        >
+            <p  style="margin: 0">
+                Obtener Premium
+            </p>
+        </button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

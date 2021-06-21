@@ -1,4 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+:root{
+  --principal-font: "DM Serif Display", serif;
+  --title-font: "Krona One", sans-serif;
+  --text-font: "Noto Serif TC", serif;
+  --off-white: #ffffff;
+  --soft-gray: #d1d1cf;
+  --strong-gray: #7f7f7f;
+  --off-black: #000000;
+}
+
+html { height: 62.5%; overflow-x: hidden;}
+
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-button-text {
+  text-transform: uppercase;
+}
