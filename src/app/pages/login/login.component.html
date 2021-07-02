@@ -1,7 +1,7 @@
-<div style="width: 100vw;	margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;" class="">
-  <section [ngClass]="modalView ? 'blur' : ''" style="width: 100vw; display: grid" class="">
-    <img src="../assets/loginImage.png" alt="" />
-    <article style="padding: 100px; padding-bottom: 50px; display: flex; flex-direction: column; justify-content: space-between;"
+<div style="width: 100vw; box-sizing: border-box;	margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
+  <section [ngClass]="modalView ? 'blur' : ''" style="width: 100vw; display: grid; box-sizing: border-box;">
+    <img src="../../../assets/loginImage.png" alt="InicioImg" />
+    <article style="box-sizing: border-box; padding: 100px; padding-bottom: 50px; display: flex; flex-direction: column; justify-content: space-between;"
       class="login--container"
     >
       <h1>Iniciar Sesión</h1>
@@ -24,7 +24,7 @@
           >Iniciar Sesión</px-button
           >
         </div>
-        <p ngIf="noData" style="text-align: right; margin-right: 30px; 	--tw-text-opacity: 1;
+        <p *ngIf="noData" style="text-align: right; margin-right: 30px; 	--tw-text-opacity: 1;
             color: rgba(220, 38, 38, var(--tw-text-opacity)); margin: 0px;" class="">
           Por favor ingrese todos los datos
         </p>
@@ -46,7 +46,7 @@
     </article>
   </section>
   <div
-    ngIf="modalView"
+    *ngIf="modalView"
     style="display: flex; justify-content: center; align-items: center; width: 100vw; "
     class="emailModal shadow"
   >
@@ -67,7 +67,7 @@
         >Listo</px-button
         >
       </div>
-      <p style="--tw-text-opacity: 1; color: rgba(220, 38, 38, var(--tw-text-opacity)); margin: 0px;" ngIf="noEmail" class="">
+      <p style="--tw-text-opacity: 1; color: rgba(220, 38, 38, var(--tw-text-opacity)); margin: 0px;" *ngIf="noEmail" class="">
         Por favor ingrese un email
       </p>
     </div>

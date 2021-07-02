@@ -1,326 +1,75 @@
-<div style="display: flex; flex-direction: column; align-items: center; width: 100vw;" class="flex-col items-center">
-  <section
-        style="background: url('../../assets/messageBackground-4.png'); display: flex; flex-direction: column; 
-        justify-content: center; align-items: center; width: 100vw; 
-            background-size: 1500px auto;
-            background-position: center;
-            height: 500px;
-            font-family: var(--principal-font);
-            font-size: 70px;
-            line-height: 1;"  
+<div style="width: 100vw;	margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;" class="">
+  <section [ngClass]="modalView ? 'blur' : ''" style="width: 100vw; display: grid" class="">
+    <img src="../assets/loginImage.png" alt="" />
+    <article style="padding: 100px; padding-bottom: 50px; display: flex; flex-direction: column; justify-content: space-between;"
+      class="login--container"
     >
-        <p style="color: white; text-align: center; 
-        padding: 0 200px;">
-            El éxito llega cuando tus sueños son más grandes que tus
-            excusas
+      <h1>Iniciar Sesión</h1>
+      <form style="	margin-top: 25px;" class="">
+        <label>E-mail</label>
+        <input ngModel="email" id="emailForm" type="text" name="email" />
+        <label>Contraseña</label>
+        <input
+          ngModel="password"
+          id="passwordForm"
+          type="password"
+          name="password"
+        />
+        <div style="margin-right: 25px; margin-top: 25px;" class="goPrincipalButton">
+          <px-button
+            (customClick)="sumbitLogin"
+            style="	font-size: 15px; line-height: 20px;"
+            class=""
+            [color]="buttonColor"
+          >Iniciar Sesión</px-button
+          >
+        </div>
+        <p ngIf="noData" style="text-align: right; margin-right: 30px; 	--tw-text-opacity: 1;
+            color: rgba(220, 38, 38, var(--tw-text-opacity)); margin: 0px;" class="">
+          Por favor ingrese todos los datos
         </p>
-        <button
-           
-            class="button black"
-        >
-            <p  style="margin: 0">
-                Regístrate
-            </p>
-        </button>
-    </section>
-    <div style="width: 100vw" class=" membershipData">
-      <div
-      style="display: flex; justify-content: center; align-items: flex-end;"
-        class="theImg first"
-        
-      >
-        <div style="background-color: black; padding-left: 25px;
-        padding-right: 25px; padding-top: 15px;
-padding-bottom: 15px; display: flex; flex-direction: column; justify-content: center;" class="theCard">
-          <h1 class="text-title">Comienza tu propia startup</h1>
-          <p class="text-text">Crea tu propia StartUp y dala a conocer a nuestra comunidad - Membresía para emprendedores. Puedes crear StartUps ilimitadas y subir información adicional.</p>
-        </div>
+      </form>
+      <div class="container--alarms">
+        <p>
+          ¿No tienes cuenta?
+          <routerLink class="withHover" routerLink="/login" routerLinkActive="active">
+            Regístrate
+          </routerLink>
+        </p>
+        <p>
+          ¿Olvidaste tu contraseña?
+          <a class="withHover" (click)="toggleModal">
+            Recupera tu contraseña
+          </a>
+        </p>
       </div>
-      <div style="width: 100vw; box-sizing: border-box; display: flex; gap: 25px; padding-left: 100px;
-      padding-right: 100px; padding-top: 50px;
-padding-bottom: 50px;" class="cardsContainer">
-        <div class="theCard">
-          <div style="background-color: black; display: flex; justify-content: center; 
-          align-items: center;
-          padding: 25px;" class="theTitle">
-            <h1 style="text-align: center; font-size: 40px; 
-            color: white;
-            font-family: var(--principal-font);">Membresía <br /> Free</h1>
-          </div>
-          <div style="background-color: white; padding: 15px;" class="theText">
-            -30 tags para el perfil <br />
-            -Visualizar más información de 5 StartUps que este elija <br />
-            -30 perfiles de StartUps en favoritos <br />
-            -Solicitudes con menor prioridad <br />
-            -Sin foto de portada personalizada
-          </div>
-          <div style="background-color: white; padding: 15px; justify-content: center;
-          align-items: center; padding: 10px;" class="theBotton">
-            <button
-           
-            class="button black"
+    </article>
+  </section>
+  <div
+    ngIf="modalView"
+    style="display: flex; justify-content: center; align-items: center; width: 100vw; "
+    class="emailModal shadow"
+  >
+    <div style="padding: 15px; display: flex; flex-direction: column;	justify-content: center;" class="content--container">
+      <input
+        id="emailRecoveringPassword"
+        class="inputDiv"
+        type="email"
+        placeholder="Ingrese su correo electrónico"
+      />
+      <div class="button-container">
+        <p style="margin: 0px;" class="volverAncle" (click)="toggleModal">Volver</p>
+        <px-button
+          (customClick)="sumbitEmail"
+          style="	font-size: 15px; line-height: 20px;"
+          class="buttonListo"
+          [color]="buttonColor"
+        >Listo</px-button
         >
-            <p  style="margin: 0">
-                Obtener Free
-            </p>
-        </button>
-          </div>
-        </div>
-        <div class="theCard">
-          <div style="background-color: black; display: flex; justify-content: center; 
-          align-items: center;
-          padding: 25px;" class="theTitle">
-            <h1 style="text-align: center; font-size: 40px; 
-            color: white;
-            font-family: var(--principal-font);">Membresía <br /> Free</h1>
-          </div>
-          <div style="background-color: white; padding: 15px;" class="theText">
-            -50 tags para el perfil <br />
-            -Visualizar más información de 10 StartUps que este elija <br />
-            -60 perfiles de StartUps en favoritos <br />
-            -Solicitudes con mayor prioridad <br />
-            -Foto de portada personalizada
-          </div>
-          <div style="background-color: white; padding: 15px; justify-content: center;
-          align-items: center; padding: 10px;" class="theBotton">
-            <button
-           
-            class="button black"
-        >
-            <p  style="margin: 0">
-                Obtener Free
-            </p>
-        </button>
-          </div>
-        </div>
-        <div class="theCard">
-          <div style="background-color: black; display: flex; justify-content: center; 
-          align-items: center;
-          padding: 25px;" class="theTitle">
-            <h1 style="text-align: center; font-size: 40px; 
-            color: white;
-            font-family: var(--principal-font);">Membresía <br /> Free</h1>
-          </div>
-          <div style="background-color: white; padding: 15px;" class="theText">
-            -80 tags para el perfil <br />
-            -Visualizar información número ilimitado de StartUps
-            <br />
-            -Número ilimitado de StartUps favoritas <br />
-            -Solicitudes con máxima prioridad <br />
-            -Foto de portada personalizada
-          </div>
-          <div style="background-color: white; padding: 15px; justify-content: center;
-          align-items: center; padding: 10px;" class="theBotton">
-            <button
-           
-            class="button black"
-        >
-            <p  style="margin: 0">
-                Obtener Free
-            </p>
-        </button>
-          </div>
-        </div>
       </div>
+      <p style="--tw-text-opacity: 1; color: rgba(220, 38, 38, var(--tw-text-opacity)); margin: 0px;" ngIf="noEmail" class="">
+        Por favor ingrese un email
+      </p>
     </div>
-    <div style="width: 100vw" class=" membershipData">
-      <div
-      style="display: flex; justify-content: center; align-items: flex-end;"
-        class="theImg second"
-        
-      >
-        <div style="background-color: black; padding-left: 25px;
-        padding-right: 25px; padding-top: 15px;
-padding-bottom: 15px; display: flex; flex-direction: column; justify-content: center;" class="theCard">
-          <h1 class="text-title">Sé parte del comienzo de una StartUp</h1>
-          <p class="text-text">Apoya a las StartUps que te parezcan más interesantes - Membresía para Colaboradores. Postula a un número ilimitado de StartUp que cumplan con tus intereses.</p>
-        </div>
-      </div>
-      <div style="width: 100vw; box-sizing: border-box; display: flex; gap: 25px; padding-left: 100px;
-      padding-right: 100px; padding-top: 50px;
-padding-bottom: 50px;" class="cardsContainer">
-        <div class="theCard">
-          <div style="background-color: black; display: flex; justify-content: center; 
-          align-items: center;
-          padding: 25px;" class="theTitle">
-            <h1 style="text-align: center; font-size: 40px; 
-            color: white;
-            font-family: var(--principal-font);">Membresía <br /> Free</h1>
-          </div>
-          <div style="background-color: white; padding: 15px;" class="theText">
-            -30 tags para el perfil <br />
-            -Visualizar más información de 5 StartUps que este elija <br />
-            -30 perfiles de StartUps en favoritos <br />
-            -Solicitudes con menor prioridad <br />
-            -Sin foto de portada personalizada
-          </div>
-          <div style="background-color: white; padding: 15px; justify-content: center;
-          align-items: center; padding: 10px;" class="theBotton">
-            <button
-           
-            class="button black"
-        >
-            <p  style="margin: 0">
-                Obtener Free
-            </p>
-        </button>
-          </div>
-        </div>
-        <div class="theCard">
-          <div style="background-color: black; display: flex; justify-content: center; 
-          align-items: center;
-          padding: 25px;" class="theTitle">
-            <h1 style="text-align: center; font-size: 40px; 
-            color: white;
-            font-family: var(--principal-font);">Membresía <br /> Pro</h1>
-          </div>
-          <div style="background-color: white; padding: 15px;" class="theText">
-            -50 tags para el perfil <br />
-            -Visualizar más información de 10 StartUps que este elija <br />
-            -60 perfiles de StartUps en favoritos <br />
-            -Solicitudes con mayor prioridad <br />
-            -Foto de portada personalizada
-          </div>
-          <div style="background-color: white; padding: 15px; justify-content: center;
-          align-items: center; padding: 10px;" class="theBotton">
-            <button
-           
-            class="button black"
-        >
-            <p  style="margin: 0">
-                Obtener Pro
-            </p>
-        </button>
-          </div>
-        </div>
-        <div class="theCard">
-          <div style="background-color: black; display: flex; justify-content: center; 
-          align-items: center;
-          padding: 25px;" class="theTitle">
-            <h1 style="text-align: center; font-size: 40px; 
-            color: white;
-            font-family: var(--principal-font);">Membresía <br /> Premium</h1>
-          </div>
-          <div style="background-color: white; padding: 15px;" class="theText">
-            -80 tags para el perfil <br />
-            -Visualizar información número ilimitado de StartUps
-            <br />
-            -Número ilimitado de StartUps favoritas <br />
-            -Solicitudes con máxima prioridad <br />
-            -Foto de portada personalizada
-          </div>
-          <div style="background-color: white; padding: 15px; justify-content: center;
-          align-items: center; padding: 10px;" class="theBotton">
-            <button
-           
-            class="button black"
-        >
-            <p  style="margin: 0">
-                Obtener Premium
-            </p>
-        </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style="width: 100vw" class=" membershipData">
-      <div
-      style="display: flex; justify-content: center; align-items: flex-end;"
-        class="theImg third"
-        
-      >
-        <div style="background-color: black; padding-left: 25px;
-        padding-right: 25px; padding-top: 15px;
-padding-bottom: 15px; display: flex; flex-direction: column; justify-content: center;" class="theCard">
-          <h1 class="text-title">Invierte en la StartUp que quieres ver crecer</h1>
-          <p class="text-text">Invierte en las StartUps que cumplan con tus intereses - Membresía para Inversionistas. Visualiza información adicional de un número ilimitado de StartUps.</p>
-        </div>
-      </div>
-      <div style="width: 100vw; box-sizing: border-box; display: flex; gap: 25px; padding-left: 100px;
-      padding-right: 100px; padding-top: 50px;
-padding-bottom: 50px;" class="cardsContainer">
-        <div class="theCard">
-          <div style="background-color: black; display: flex; justify-content: center; 
-          align-items: center;
-          padding: 25px;" class="theTitle">
-            <h1 style="text-align: center; font-size: 40px; 
-            color: white;
-            font-family: var(--principal-font);">Membresía <br /> Free</h1>
-          </div>
-          <div style="background-color: white; padding: 15px;" class="theText">
-            -30 tags para el perfil <br />
-            -Visualizar más información de 5 StartUps que este elija <br />
-            -30 perfiles de StartUps en favoritos <br />
-            -Solicitudes con menor prioridad <br />
-            -Sin foto de portada personalizada
-          </div>
-          <div style="background-color: white; padding: 15px; justify-content: center;
-          align-items: center; padding: 10px;" class="theBotton">
-            <button
-           
-            class="button black"
-        >
-            <p  style="margin: 0">
-                Obtener Free
-            </p>
-        </button>
-          </div>
-        </div>
-        <div class="theCard">
-          <div style="background-color: black; display: flex; justify-content: center; 
-          align-items: center;
-          padding: 25px;" class="theTitle">
-            <h1 style="text-align: center; font-size: 40px; 
-            color: white;
-            font-family: var(--principal-font);">Membresía <br /> Pro</h1>
-          </div>
-          <div style="background-color: white; padding: 15px;" class="theText">
-            -50 tags para el perfil <br />
-            -Visualizar más información de 10 StartUps que este elija <br />
-            -60 perfiles de StartUps en favoritos <br />
-            -Solicitudes con mayor prioridad <br />
-            -Foto de portada personalizada
-          </div>
-          <div style="background-color: white; padding: 15px; justify-content: center;
-          align-items: center; padding: 10px;" class="theBotton">
-            <button
-           
-            class="button black"
-        >
-            <p  style="margin: 0">
-                Obtener Pro
-            </p>
-        </button>
-          </div>
-        </div>
-        <div class="theCard">
-          <div style="background-color: black; display: flex; justify-content: center; 
-          align-items: center;
-          padding: 25px;" class="theTitle">
-            <h1 style="text-align: center; font-size: 40px; 
-            color: white;
-            font-family: var(--principal-font);">Membresía <br /> Premium</h1>
-          </div>
-          <div style="background-color: white; padding: 15px;" class="theText">
-            -80 tags para el perfil <br />
-            -Visualizar información número ilimitado de StartUps
-            <br />
-            -Número ilimitado de StartUps favoritas <br />
-            -Solicitudes con máxima prioridad <br />
-            -Foto de portada personalizada
-          </div>
-          <div style="background-color: white; padding: 15px; justify-content: center;
-          align-items: center; padding: 10px;" class="theBotton">
-            <button
-           
-            class="button black"
-        >
-            <p  style="margin: 0">
-                Obtener Premium
-            </p>
-        </button>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
 </div>
