@@ -29,10 +29,12 @@
   height: 500px;
   font-family: var(--principal-font);
   font-size: 70px;
+  line-height: 78px;
 }
 @media only screen and (max-width: 1024px) {
   .Message {
     font-size: 54px;
+    line-height: 60px;
   }
   .texto {
     padding: 0 160px;
@@ -41,6 +43,7 @@
 @media only screen and (max-width: 768px) {
   .Message {
     font-size: 42px;
+    line-height: 48px;
   }
   .texto {
     padding: 0 80px;
@@ -52,6 +55,7 @@
 @media only screen and (max-width: 580px) {
   .Message {
     font-size: 30px;
+    line-height: 34px;
   }
   .texto {
     padding: 0 20px;

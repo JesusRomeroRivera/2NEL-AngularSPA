@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PxPrincipalComponent } from './PxPrincipal.component';
+import { PxMembershipComponent } from './PxMembership.component';
 
-describe('PxPrincipalComponent', () => {
-  let component: PxPrincipalComponent;
-  let fixture: ComponentFixture<PxPrincipalComponent>;
+describe('PxMembershipComponent', () => {
+  let component: PxMembershipComponent;
+  let fixture: ComponentFixture<PxMembershipComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PxPrincipalComponent ]
+      declarations: [ PxMembershipComponent ]
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PxPrincipalComponent);
+    fixture = TestBed.createComponent(PxMembershipComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

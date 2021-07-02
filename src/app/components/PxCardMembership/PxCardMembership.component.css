@@ -1,0 +1,42 @@
+h1 {
+  color: white;
+  font-family: var(--principal-font);
+  font-size: 40px;
+}
+.theCard {
+  display: grid;
+  grid-template-rows: 4fr 4fr 2fr;
+}
+.theText {
+  font-family: var(--text-font);
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  height: 220px;
+}
+.theBotton {
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+@media only screen and (max-width: 1024px) {
+  .theText {
+    height: 240px;
+  }
+  h1 {
+    font-size: 26px;
+  }
+  .theTitle {
+    padding: 10px !important;
+  }
+  .theBotton {
+    padding: 10px 10px !important;
+  }
+  .justTheBotton {
+    padding: 8px 25px !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .theText {
+    height: auto;
+  }
+}
