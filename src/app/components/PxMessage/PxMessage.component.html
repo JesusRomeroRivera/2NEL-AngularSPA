@@ -1,8 +1,9 @@
 <section
   [ngClass]="this.isAny.imageUrl"
-  class="w-screen Message flex flex-col justify-center items-center"
+  style="width: 100vw; display: flex; flex-direction: column; justify-content: center; align-items: center;"
+  class="Message"
 >
-  <p class="texto text-white text-center">
+  <p style="text-align: center; color: white;" class="texto">
     <ng-content></ng-content>
   </p>
   <small

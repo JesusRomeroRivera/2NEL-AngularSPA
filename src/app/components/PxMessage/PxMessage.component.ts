@@ -13,6 +13,5 @@ interface InfoMessage {
 })
 export class PxMessageComponent{
   @Input() isAny : InfoMessage;
-
   buttonColor: "black"
 }
