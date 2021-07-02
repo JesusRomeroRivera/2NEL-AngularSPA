@@ -1,0 +1,55 @@
+.principal {
+  height: 600px;
+  background-image: url("../../../assets/principalBackground.png");
+  background-size: 1560px auto;
+  background-position: center center;
+  padding: 0 100px;
+  color: white;
+}
+.principal-title {
+  font-family: "DM Serif Display", serif;
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 66px;
+  font-size: 70px;
+  margin: 0;
+}
+.principal-text {
+  margin-top: 45px;
+  font-family: "DM Serif Display", serif;
+  font-style: regular;
+  font-size: 15px;
+  width: 40vw;
+}
+@media only screen and (max-width: 1024px) {
+  .principal {
+    padding: 0 70px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .principal {
+    padding: 0 60px;
+  }
+  .principal-title {
+    line-height: 56px;
+    font-size: 60px;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .principal {
+    padding: 0 50px;
+    height: 400px;
+    align-items: center;
+  }
+  .principal-title {
+    line-height: 40px;
+    font-size: 44px;
+    text-align: center;
+  }
+  .principal-text {
+    margin-top: 45px;
+    font-size: 15px;
+    width: auto;
+    text-align: center;
+  }
+}
