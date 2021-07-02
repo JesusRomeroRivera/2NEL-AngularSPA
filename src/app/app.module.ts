@@ -26,20 +26,12 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 
 import { PxButtonComponent } from "./components/PxButton/PxButton.component";
 import { PxMessageComponent } from "./components/PxMessage/PxMessage.component";
-<<<<<<< HEAD
 import { PxPrincipalComponent } from "./components/PxPrincipal/PxPrincipal.component";
 import { PxListComponent } from "./components/PxList/PxList.component";
 import { PxFooterComponent} from "./components/PxFooter/PxFooter.component";
 import { PxIconComponent} from "./components/PxIcon/PxIcon.component";
 import { PxMembershipComponent} from "./components/PxMembership/PxMembership.component";
 import { PxCardMembershipComponent} from "./components/PxCardMembership/PxCardMembership.component";
-=======
-import {PxPrincipalComponent} from "./components/PxPrincipal/PxPrincipal.component";
-import {PxFooterComponent} from "./components/PxFooter/PxFooter.component";
-import {PxIconComponent} from "./components/PxIcon/PxIcon.component";
-import {PxMembershipComponent} from "./components/PxMembership/PxMembership.component";
-import {PxCardMembershipComponent} from "./components/PxCardMembership/PxCardMembership.component";
->>>>>>> 3c46785c86314dcdf5c5f3c1578f5ceef5642267
 
 @NgModule({
   declarations: [
@@ -52,11 +44,8 @@ import {PxCardMembershipComponent} from "./components/PxCardMembership/PxCardMem
     PageNotFoundComponent,
     PxButtonComponent,
     PxMessageComponent,
-<<<<<<< HEAD
     PxPrincipalComponent,
     PxListComponent,
-=======
->>>>>>> 3c46785c86314dcdf5c5f3c1578f5ceef5642267
     PxMembershipComponent,
     PxCardMembershipComponent,
     PxPrincipalComponent,

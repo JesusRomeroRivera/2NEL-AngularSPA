@@ -56,10 +56,7 @@ p {
 }
 @media only screen and (max-width: 768px) {
   .cardsContainer {
-<<<<<<< HEAD
-    gap: 50px !important;
-=======
->>>>>>> 3c46785c86314dcdf5c5f3c1578f5ceef5642267
+    gap: 100px !important;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -68,9 +65,9 @@ p {
     height: 300px;
   }
   .membershipData {
-    height: 1400px;
+    height: 1650px;
     display: grid;
-    grid-template-rows: 1fr 3fr;
+    grid-template-rows: 1fr 4fr;
   }
   .theCardTitle {
     font-size: 26px;
@@ -78,49 +75,36 @@ p {
   .theCardText {
     font-size: 15px;
   }
-<<<<<<< HEAD
   .theText{
     padding-bottom: 0 !important;
   }
-=======
->>>>>>> 3c46785c86314dcdf5c5f3c1578f5ceef5642267
 }
 @media only screen and (max-width: 580px) {
   .cardsContainer {
-    gap: 40px !important;
+    gap: 100px !important;
     padding: 10px !important;
   }
   .membresia {
-<<<<<<< HEAD
     height: 300px !important;
   }
   .membershipData {
-    height: 1400px !important;
+    height: 1600px !important;
     display: grid !important;
-    grid-template-rows: 1fr 4fr !important;
-=======
+    grid-template-rows: 1fr 5fr !important;
     height: 300px;
   }
   .membershipData {
     height: 1400px;
     display: grid;
     grid-template-rows: 1fr 4fr;
->>>>>>> 3c46785c86314dcdf5c5f3c1578f5ceef5642267
   }
   .theCard {
     width: 80vw !important;
   }
   .theCardTitle {
-<<<<<<< HEAD
     font-size: 22px !important;
   }
   .theCardText {
     font-size: 14px !important;
-=======
-    font-size: 22px;
-  }
-  .theCardText {
-    font-size: 14px;
->>>>>>> 3c46785c86314dcdf5c5f3c1578f5ceef5642267
   }
 }
