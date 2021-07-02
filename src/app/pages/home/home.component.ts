@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
     FreelancerService.getAll()
       .then((response) => {
         console.log(response)
-        this.freelancers = response.data;
+        this.freelancers = response.data.content;
       })
       .catch((e) => {
         console.log(e);
@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
     InvestorService.getAll()
       .then((response) => {
         console.log(response)
-        this.investors = response.data;
+        this.investors = response.data.content;
       })
       .catch((e) => {
         console.log(e);
@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
     EnterpriseService.getAll()
       .then((response) => {
         console.log(response)
-        this.enterprises = response.data;
+        this.enterprises = response.data.content;
       })
       .catch((e) => {
         console.log(e);
@@ -62,7 +62,7 @@ export class HomeComponent implements OnInit {
   constructor() { 
     localStorage.setItem(
       "token",
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEwMCIsIm5iZiI6MTYyNTExODIzOSwiZXhwIjoxNjI2MzI3ODM5LCJpYXQiOjE2MjUxMTgyMzl9._fzdDSFDw08opNdPQv0KEnta_GBPYYqfuRkQD9M_q-Q"
+      "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqZXN1c0BnbWFpbC5jb20iLCJleHAiOjE2MjUyNzM4ODMsImlhdCI6MTYyNTI1NTg4M30.2Z9kfa-Z9fBkwAu8fiJTjODupxJoB1kWnGJ_efxXrOgvJLtEv_EEAuPnIpHaf1TnIDIij_WJGEr9HFmLW2_w4w"
     );
     this.getDataFreelancer();
     this.getDataInvestor();

@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import AuthService from "../../services/auth-service.js";
 
 @Component({
   selector: 'app-login',
@@ -10,11 +11,11 @@ export class LoginComponent implements OnInit {
   modalView: boolean = false;
   noEmail: boolean = false;
   noData: boolean = false;
-  email: " ";
-  password: " ";
+  username: string = "";
+  password: string = "";
   get whatSelected() {
     return {
-      email: this.email,
+      username: this.username,
       password: this.password,
     }
   }
@@ -22,6 +23,7 @@ export class LoginComponent implements OnInit {
     this.modalView = !this.modalView;
   }
   sumbitEmail() {
+    console.log("XD");
     if (document.getElementById("emailRecoveringPassword").nodeValue == "") {
       this.noEmail = true;
     } else {
@@ -30,15 +32,15 @@ export class LoginComponent implements OnInit {
     }
   }
   sumbitLogin() {
-    console.log("hola");
-    /*UserService.login(this.whatSelected).then((response) => {
+    console.log(this.whatSelected);
+    AuthService.auth(this.whatSelected).then((response) => {
       localStorage.setItem("token", response.data.token);
-      localStorage.setItem("user", response.data);
+      localStorage.setItem("user", response.data);/*
       this.$router.push({
         path: "/principal",
         params: {user: response.data.id},
-      });
-    });*/
+      });*/
+    });
   }
   ngOnInit(): void {
   }

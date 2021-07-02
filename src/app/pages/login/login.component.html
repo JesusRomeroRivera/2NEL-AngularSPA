@@ -7,17 +7,17 @@
       <h1>Iniciar Sesión</h1>
       <form style="	margin-top: 25px;" class="">
         <label>E-mail</label>
-        <input ngModel="email" id="emailForm" type="text" name="email" />
+        <input [(ngModel)]="username" id="emailForm" type="text" name="username" />
         <label>Contraseña</label>
         <input
-          ngModel="password"
+        [(ngModel)]="password"
           id="passwordForm"
           type="password"
           name="password"
         />
         <div style="margin-right: 25px; margin-top: 25px;" class="goPrincipalButton">
           <px-button
-            (customClick)="sumbitLogin"
+            (click)="sumbitLogin()"
             style="	font-size: 15px; line-height: 20px;"
             class=""
             [color]="buttonColor"
@@ -58,9 +58,9 @@
         placeholder="Ingrese su correo electrónico"
       />
       <div class="button-container">
-        <p style="margin: 0px;" class="volverAncle" (click)="toggleModal">Volver</p>
+        <p 
+        style="margin: 0px;" class="volverAncle" (click)="toggleModal">Volver</p>
         <px-button
-          (customClick)="sumbitEmail"
           style="	font-size: 15px; line-height: 20px;"
           class="buttonListo"
           [color]="buttonColor"
