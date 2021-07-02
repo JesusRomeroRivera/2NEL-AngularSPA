@@ -8,8 +8,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class PxMembershipComponent{
 
-  @Input()title: string;
   @Input()numberImg: string;
+  @Input()title: string;
   @Input()text: string;
 
   buttonColor: "black"

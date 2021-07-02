@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StudentsComponent } from './pages/students/students.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
+import { MembershipComponent } from './pages/membership/membership.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatGridListModule } from "@angular/material/grid-list";
@@ -26,6 +27,8 @@ import { PxMessageComponent } from "./components/PxMessage/PxMessage.component";
 import {PxPrincipalComponent} from "./components/PxPrincipal/PxPrincipal.component";
 import {PxFooterComponent} from "./components/PxFooter/PxFooter.component";
 import {PxIconComponent} from "./components/PxIcon/PxIcon.component";
+import {PxMembershipComponent} from "./components/PxMembership/PxMembership.component";
+import {PxCardMembershipComponent} from "./components/PxCardMembership/PxCardMembership.component";
 
 @NgModule({
   declarations: [
@@ -33,9 +36,12 @@ import {PxIconComponent} from "./components/PxIcon/PxIcon.component";
     StudentsComponent,
     HomeComponent,
     AboutComponent,
+    MembershipComponent,
     PageNotFoundComponent,
     PxButtonComponent,
     PxMessageComponent,
+    PxMembershipComponent,
+    PxCardMembershipComponent,
     PxPrincipalComponent,
     PxFooterComponent,
     PxIconComponent
