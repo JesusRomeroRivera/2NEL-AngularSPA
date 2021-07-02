@@ -4,7 +4,10 @@ h1 {
   font-size: 40px;
 }
 .theCard {
+<<<<<<< HEAD
   width: 100%;
+=======
+>>>>>>> 3c46785c86314dcdf5c5f3c1578f5ceef5642267
   display: grid;
   grid-template-rows: 4fr 4fr 2fr;
 }
@@ -12,7 +15,11 @@ h1 {
   font-family: var(--text-font);
   border-left: 2px solid black;
   border-right: 2px solid black;
+<<<<<<< HEAD
   height: 200px ; 
+=======
+  height: 220px;
+>>>>>>> 3c46785c86314dcdf5c5f3c1578f5ceef5642267
 }
 .theBotton {
   border-bottom: 2px solid black;
@@ -21,7 +28,11 @@ h1 {
 }
 @media only screen and (max-width: 1024px) {
   .theText {
+<<<<<<< HEAD
     height: 220px;
+=======
+    height: 240px;
+>>>>>>> 3c46785c86314dcdf5c5f3c1578f5ceef5642267
   }
   h1 {
     font-size: 26px;
@@ -40,8 +51,11 @@ h1 {
   .theText {
     height: auto;
   }
+<<<<<<< HEAD
   .theCard{
     width: 80vw;
       grid-template-rows: 2fr 3fr 2fr;
   }
+=======
+>>>>>>> 3c46785c86314dcdf5c5f3c1578f5ceef5642267
 }
