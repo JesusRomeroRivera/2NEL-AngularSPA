@@ -1,19 +1,5 @@
 <div style="display: flex; flex-direction: column; align-items: center; ">
-    <section
-        style="background: url('../../assets/messageBackground-5.png'); display: flex; flex-direction: column; 
-        justify-content: center; align-items: center; width: 100vw; 
-            background-size: 1500px auto;
-            background-position: center;
-            height: 500px;
-            font-family: var(--principal-font);
-            font-size: 70px;
-            line-height: 1;"  
-    >
-        <p style="color: white; text-align: center; 
-        padding: 0 200px;">
-            Buscando conectar tus ideas y trabajos con otras personas
-        </p>
-    </section>
+    <px-message [isAny]="noButton">Buscando conectar tus ideas y trabajos con otras personas</px-message>
     <section style="width: 100vw;">
       <p style="font-size: 18.75px; font-family: var(--text-font); 
       line-height: 22.5px; padding-left: 80px; padding-right: 80px; padding-top: 60px; 
@@ -99,13 +85,6 @@
             El éxito llega cuando tus sueños son más grandes que tus
             excusas
         </p>
-        <button
-           
-            class="button black"
-        >
-            <p  style="margin: 0">
-                Regístrate
-            </p>
-        </button>
+        <px-button [color]="'black'">Regístrate</px-button>
     </section>
   </div>

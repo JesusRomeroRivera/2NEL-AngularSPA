@@ -1,0 +1,19 @@
+.button {
+    font-family: var(--principal-font);
+    padding: 9px 45px;
+    border: 0;
+    border-radius: 30px;
+}
+.black {
+    background-color: black;
+    color: white;
+}
+.withBorder {
+    background-color: white;
+    color: black;
+    border: 3px solid black;
+}
+.white {
+    background-color: white;
+    color: black;
+}

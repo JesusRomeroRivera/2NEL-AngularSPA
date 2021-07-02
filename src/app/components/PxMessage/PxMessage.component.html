@@ -1,0 +1,22 @@
+<section
+  [ngClass]="this.isAny.imageUrl"
+  class="w-screen Message flex flex-col justify-center items-center"
+>
+  <p class="texto text-white text-center">
+    <ng-content></ng-content>
+  </p>
+  <small
+    *ngIf="this.isAny.isText"
+    class="TextStartup text-3xl text-white font-medium"
+  >Comienza tu propia Startup</small
+  >
+  <div routerLink="/memberships" routerLinkActive="active"
+  ><px-button
+    *ngIf="this.isAny.isButton"
+    class="Message--text text-3xl"
+    [color]="buttonColor"
+  >
+    Regístrate</px-button
+  ></div
+  >
+</section>

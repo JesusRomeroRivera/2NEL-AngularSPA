@@ -19,7 +19,10 @@ import { FormsModule } from "@angular/forms";
 import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { HttpClientModule } from "@angular/common/http";
-import {MatTooltipModule} from "@angular/material/tooltip";
+import { MatTooltipModule } from "@angular/material/tooltip";
+
+import { PxButtonComponent } from "./components/PxButton/PxButton.component";
+import { PxMessageComponent } from "./components/PxMessage/PxMessage.component";
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     StudentsComponent,
     HomeComponent,
     AboutComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    PxButtonComponent,
+    PxMessageComponent
   ],
     imports: [
         BrowserModule,

@@ -1,0 +1,62 @@
+.image1 {
+  background: url("../../../assets/messageBackground.jpg");
+}
+.image2 {
+  background: url("../../../assets/messageBackground-2.png");
+}
+.image3 {
+  background: url("../../../assets/messageBackground-3.png");
+}
+.image4 {
+  background: url("../../../assets/messageBackground-4.png");
+}
+.image5 {
+  background: url("../../../assets/messageBackground-5.png");
+}
+.image6 {
+  background: url("../../../assets/messageBackground-6.png");
+}
+.texto {
+  padding: 0 200px;
+}
+.TextStartup {
+  margin-bottom: -30px;
+  font-family: var(--principal-font);
+}
+.Message {
+  background-size: 1500px auto;
+  background-position: center;
+  height: 500px;
+  font-family: var(--principal-font);
+  font-size: 70px;
+}
+@media only screen and (max-width: 1024px) {
+  .Message {
+    font-size: 54px;
+  }
+  .texto {
+    padding: 0 160px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .Message {
+    font-size: 42px;
+  }
+  .texto {
+    padding: 0 80px;
+  }
+  .TextStartup {
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .Message {
+    font-size: 30px;
+  }
+  .texto {
+    padding: 0 20px;
+  }
+  .TextStartup {
+    font-size: 14px !important;
+  }
+}

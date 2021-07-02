@@ -1,0 +1,16 @@
+<button
+    (click)="buttonClick"
+    class="button"
+    [ngClass]="
+      this.color == 'black'
+        ? 'black'
+        : this.color == 'white'
+        ? 'white'
+        : 'withBorder'
+    "
+    type="button"
+  >
+    <p>
+      <ng-content></ng-content>
+    </p>
+  </button>
