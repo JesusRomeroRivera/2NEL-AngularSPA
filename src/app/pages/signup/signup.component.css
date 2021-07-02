@@ -1,0 +1,100 @@
+.content--container {
+  background-color: white;
+  width: 400px;
+  height: 150px;
+  border-radius: 10px;
+  position: absolute;
+}
+.textTerminos {
+  font-family: var(--text-font);
+}
+.emailModal {
+  background-color: white;
+  position: absolute;
+  top: 8vh;
+  left: 0;
+  height: 83.5vh;
+}
+.facebookLogoBlanco,
+.googleLogoBlanco {
+  width: 20px;
+  height: 20px;
+  display: inline;
+  margin-right: 4px;
+}
+.container--alarms {
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.goPrincipalButton {
+  justify-self: flex-end;
+}
+.containerCheckbox {
+  width: 100%;
+  display: flex;
+  justify-self: flex-start;
+  align-items: center;
+}
+p {
+  font-family: var(--principal-font);
+  font-size: 14px;
+  font-weight: 400;
+}
+.TheEspecial:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+section {
+  width: 100%;
+  box-sizing: border-box;
+  height: 83.5vh;
+  grid-template-columns: 1fr 1fr;
+}
+img {
+  width: 100%;
+  height: 83.5vh;
+}
+form {
+  height: 240px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+}
+h1 {
+  font-size: 40px;
+  font-family: var(--principal-font);
+}
+label {
+  font-size: 16px;
+  font-family: var(--principal-font);
+}
+input {
+  font-size: 16px;
+  border-bottom: 1px solid gray;
+  width: 90%;
+  outline: none;
+  margin: 0rem 0 20px 0;
+}
+.theCheckbox {
+  width: auto;
+  margin: 0;
+  margin-right: 10px;
+}
+@media only screen and (max-width: 1024px) {
+  .login--container {
+    padding: 70px 50px !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  section {
+    width: 100%;
+    box-sizing: border-box;
+    height: 83.5vh;
+    grid-template-columns: 1fr;
+  }
+  img {
+    display: none;
+  }
+}

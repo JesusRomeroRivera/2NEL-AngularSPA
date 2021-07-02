@@ -1,0 +1,99 @@
+<div style="width: 100vw; margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
+  <section style="	width: 100vw; display:grid">
+    <img src="../assets/loginImage.png" alt="" />
+    <article
+      style="	padding: 100px; padding-bottom: 50px; display:flex; flex-direction: column; justify-content: space-between;"
+      class="login--container"
+    >
+      <h1>Regístrate</h1>
+      <p>
+        ¿Ya tienes una cuenta?
+        <small class="hover:underline"  routerLink="/login" routerLinkActive="active">
+         Iniciar Sesión </small>
+      </p>
+      <form style="	margin-top: 15px; margin-bottom: 15px;" >
+        <label>E-mail</label>
+        <input ngModel="email" type="text" name="email" />
+        <label >Contraseña</label>
+        <input ngMmodel="password" type="password" name="password" />
+        <div class="containerCheckbox">
+          <input
+            ngModel="check"
+            class="theCheckbox"
+            type="checkbox"
+            name="Terms"
+          />
+          <label (click)="toggleModal" class="TheEspecial"
+          >Acepto los términos y condiciones</label
+          >
+        </div>
+        <div
+          style="margin-right: 25px; 	margin-top: -5px;"
+          class="goPrincipalButton"
+          routerLink="/registerDetails" routerLinkActive="active"
+        >
+          <px-button
+            type="button"
+            (customClick)="insertData"
+            style="	font-size: 15px; line-height: 20px;"
+            [color]="buttonColor" >
+           Siguiente --> </px-button
+          >
+        </div>
+        <p *ngIf=this.noData style="text-align: right; margin-right: 30px; 	--tw-text-opacity: 1;
+color: rgba(75, 85, 99, var(--tw-text-opacity)); margin: 0px;">
+          Por favor ingrese todos los datos
+        </p>
+      </form>
+      <div class="container--alarms">
+        <p>Regístrate con un social media</p>
+        <div style="margin-top: 20px; display:flex; justify-content: space-around;" >
+          <px-button style="	font-size: 12.5px; line-height: 17.5px; padding-left: 15px; padding-right: 15px; 	padding-top: 5px;
+           padding-bottom: 5px;"  [color]="buttonColor"
+          ><img
+            class="facebookLogoBlanco"
+            src="@/assets/FbBlanco.jpg"
+            alt="LogoFb"
+          />Facebook</px-button
+          >
+          <px-button style="	font-size: 12.5px; line-height: 17.5px; padding-left: 20px; padding-right: 20px;
+           padding-top: 5px; padding-bottom: 5px;" [color]="buttonColor"
+          ><img
+            class="googleLogoBlanco"
+            src="@/assets/googleBlanco.png"
+            alt="LogoFb"
+          />Google</px-button
+          >
+        </div>
+      </div>
+      <div
+        *ngIf=this.modalView
+        style="display:flex; justify-content: center; align-items: center;	width: 100vw;"
+        class="emailModal shadow"
+      >
+        <div style=" padding: 15px; display:flex;	flex-direction: column;	justify-content: center;" class="content--container">
+          <div style="diaply:flex;	flex-direction: column;	align-items: center;	gap: 50px; " class="button-container ">
+            <p class="textTerminos">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Maecenas sed facilisis tortor. Proin pellentesque mauris arcu,
+              quis mollis massa maximus et. Maecenas eleifend sem neque, at
+              feugiat ante luctus vitae. Phasellus venenatis facilisis
+              feugiat. Donec efficitur posuere turpis, vel iaculis felis
+              venenatis ac. Duis vitae ex ut nulla malesuada rutrum eget sit
+              amet velit. Aliquam nibh mi, pretium sit amet leo et, porta
+              porta risus. Vivamus faucibus eget eros a lacinia. Nulla augue
+              risus, laoreet a ornare sit amet, venenatis nec dui. In hac
+              habitasse platea dictumst. Nullam sed mattis mauris, eget
+              dapibus odio. In nec pellentesque justo. Integer blandit
+              vulputate eleifend. Ut condimentum, mi ut molestie lacinia,
+              lectus enim ornare odio, sit amet tincidunt nunc lorem a risus.
+              Nullam lorem dui, efficitur pretium viverra porta, efficitur nec
+              urna.
+            </p>
+            <p style=" margin: 0px;" class=" volverAncle" (click)="toggleModal">Volver</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+</div>
