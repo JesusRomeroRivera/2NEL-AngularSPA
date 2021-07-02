@@ -20,8 +20,8 @@
   padding: 0 200px;
 }
 .TextStartup {
-  margin-bottom: -30px;
-  font-family: var(--principal-font);
+  margin-bottom: -30px !important;
+  font-family: var(--principal-font) !important;
 }
 .Message {
   background-size: 1500px auto;

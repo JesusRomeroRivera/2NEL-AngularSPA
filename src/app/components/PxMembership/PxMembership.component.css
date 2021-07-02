@@ -56,6 +56,7 @@ p {
 }
 @media only screen and (max-width: 768px) {
   .cardsContainer {
+    gap: 50px !important;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -74,6 +75,9 @@ p {
   .theCardText {
     font-size: 15px;
   }
+  .theText{
+    padding-bottom: 0 !important;
+  }
 }
 @media only screen and (max-width: 580px) {
   .cardsContainer {
@@ -81,20 +85,20 @@ p {
     padding: 10px !important;
   }
   .membresia {
-    height: 300px;
+    height: 300px !important;
   }
   .membershipData {
-    height: 1400px;
-    display: grid;
-    grid-template-rows: 1fr 4fr;
+    height: 1400px !important;
+    display: grid !important;
+    grid-template-rows: 1fr 4fr !important;
   }
   .theCard {
     width: 80vw !important;
   }
   .theCardTitle {
-    font-size: 22px;
+    font-size: 22px !important;
   }
   .theCardText {
-    font-size: 14px;
+    font-size: 14px !important;
   }
 }

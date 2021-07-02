@@ -1,20 +1,27 @@
-
-.button {
-    font-family: var(--principal-font);
-    padding: 0.9rem 4.5rem;
-    border: 0;
-    border-radius: 3rem;
+.FirstText {
+}
+h1 {
+  font-family: var(--principal-font);
+}
+p {
+  font-family: var(--text-font);
+}
+@media only screen and (max-width: 768px) {
+  .FirstText {
+    gap: 20px !important;
   }
-  .black {
-    background-color: black;
-    color: white;
+  h1 {
+    font-size: 30px !important;
   }
-  .withBorder {
-    background-color: white;
-    color: black;
-    border: 3px solid black;
+  p {
+    font-size: 15px !important;
   }
-  .white {
-    background-color: white;
-    color: black;
+}
+@media only screen and (max-width: 580px) {
+  .FirstText {
+    flex-direction: column !important;
   }
+  .textAbout {
+    padding: 38px 45px !important;
+  }
+}
