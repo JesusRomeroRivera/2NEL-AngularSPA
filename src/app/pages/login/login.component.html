@@ -1,0 +1,75 @@
+<div style="width: 100vw;	margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;" class="">
+  <section [ngClass]="modalView ? 'blur' : ''" style="width: 100vw; display: grid" class="">
+    <img src="../assets/loginImage.png" alt="" />
+    <article style="padding: 100px; padding-bottom: 50px; display: flex; flex-direction: column; justify-content: space-between;"
+      class="login--container"
+    >
+      <h1>Iniciar Sesión</h1>
+      <form style="	margin-top: 25px;" class="">
+        <label>E-mail</label>
+        <input ngModel="email" id="emailForm" type="text" name="email" />
+        <label>Contraseña</label>
+        <input
+          ngModel="password"
+          id="passwordForm"
+          type="password"
+          name="password"
+        />
+        <div style="margin-right: 25px; margin-top: 25px;" class="goPrincipalButton">
+          <px-button
+            (customClick)="sumbitLogin"
+            style="	font-size: 15px; line-height: 20px;"
+            class=""
+            [color]="buttonColor"
+          >Iniciar Sesión</px-button
+          >
+        </div>
+        <p ngIf="noData" style="text-align: right; margin-right: 30px; 	--tw-text-opacity: 1;
+            color: rgba(220, 38, 38, var(--tw-text-opacity)); margin: 0px;" class="">
+          Por favor ingrese todos los datos
+        </p>
+      </form>
+      <div class="container--alarms">
+        <p>
+          ¿No tienes cuenta?
+          <routerLink class="withHover" routerLink="/login" routerLinkActive="active">
+            Regístrate
+          </routerLink>
+        </p>
+        <p>
+          ¿Olvidaste tu contraseña?
+          <a class="withHover" (click)="toggleModal">
+            Recupera tu contraseña
+          </a>
+        </p>
+      </div>
+    </article>
+  </section>
+  <div
+    ngIf="modalView"
+    style="display: flex; justify-content: center; align-items: center; width: 100vw; "
+    class="emailModal shadow"
+  >
+    <div style="padding: 15px; display: flex; flex-direction: column;	justify-content: center;" class="content--container">
+      <input
+        id="emailRecoveringPassword"
+        class="inputDiv"
+        type="email"
+        placeholder="Ingrese su correo electrónico"
+      />
+      <div class="button-container">
+        <p style="margin: 0px;" class="volverAncle" (click)="toggleModal">Volver</p>
+        <px-button
+          (customClick)="sumbitEmail"
+          style="	font-size: 15px; line-height: 20px;"
+          class="buttonListo"
+          [color]="buttonColor"
+        >Listo</px-button
+        >
+      </div>
+      <p style="--tw-text-opacity: 1; color: rgba(220, 38, 38, var(--tw-text-opacity)); margin: 0px;" ngIf="noEmail" class="">
+        Por favor ingrese un email
+      </p>
+    </div>
+  </div>
+</div>

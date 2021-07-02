@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StudentsComponent } from './pages/students/students.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
+import { LoginComponent } from './pages/login/login.component';
 import { MembershipComponent } from './pages/membership/membership.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -21,6 +22,7 @@ import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { HttpClientModule } from "@angular/common/http";
 import { MatTooltipModule } from "@angular/material/tooltip";
+
 
 import { PxButtonComponent } from "./components/PxButton/PxButton.component";
 import { PxMessageComponent } from "./components/PxMessage/PxMessage.component";
@@ -37,6 +39,7 @@ import {PxCardMembershipComponent} from "./components/PxCardMembership/PxCardMem
     HomeComponent,
     AboutComponent,
     MembershipComponent,
+    LoginComponent,
     PageNotFoundComponent,
     PxButtonComponent,
     PxMessageComponent,

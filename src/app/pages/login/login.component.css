@@ -1,0 +1,90 @@
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content--container {
+  background-color: white;
+  width: 400px;
+  height: 150px;
+  border-radius: 10px;
+}
+.blur {
+  transition: 0.2s;
+  filter: blur(4px);
+}
+.emailModal {
+  position: absolute;
+  height: 83.5vh;
+}
+.withHover:hover,
+.volverAncle:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.container--alarms {
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+p {
+  font-family: var(--principal-font);
+  font-size: 14px;
+  font-weight: 400;
+}
+.goPrincipalButton {
+  justify-self: flex-end;
+}
+img {
+  width: 100%;
+  height: 83.5vh;
+}
+article {
+  width: 100%;
+}
+section {
+  width: 100%;
+  box-sizing: border-box;
+  height: 83.5vh;
+  grid-template-columns: 1fr 1fr;
+}
+form {
+  height: 240px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+h1 {
+  font-size: 40px;
+  font-family: var(--principal-font);
+}
+label {
+  font-size: 16px;
+  font-family: var(--principal-font);
+}
+input {
+  font-size: 16px;
+  border-bottom: 1px solid gray;
+  width: 90%;
+  outline: none;
+  margin: 5px 0 20px 0;
+}
+.inputDiv {
+  width: 100%;
+}
+@media only screen and (max-width: 1024px) {
+  .login--container {
+    padding: 70px 50px !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  section {
+    width: 100%;
+    box-sizing: border-box;
+    height: 83.5vh;
+    grid-template-columns: 1fr;
+  }
+  img {
+    display: none;
+  }
+}
