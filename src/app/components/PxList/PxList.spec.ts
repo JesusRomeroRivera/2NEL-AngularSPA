@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PxMessageComponent } from './PxMessage.component';
+import { PxListComponent } from './PxList.component';
 
-describe('PxMessageComponent', () => {
-  let component: PxMessageComponent;
-  let fixture: ComponentFixture<PxMessageComponent>;
+describe('PxListComponent', () => {
+  let component: PxListComponent;
+  let fixture: ComponentFixture<PxListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PxMessageComponent ]
+      declarations: [ PxListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PxMessageComponent);
+    fixture = TestBed.createComponent(PxListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

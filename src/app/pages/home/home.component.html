@@ -1,29 +1,22 @@
 <div>
   <px-principal></px-principal>
-    <section
-        style="background: url('../../assets/messageBackground-4.png'); display: flex; flex-direction: column;
-        justify-content: center; align-items: center; width: 100vw;
-            background-size: 1500px auto;
-            background-position: center;
-            height: 500px;
-            font-family: var(--principal-font);
-            font-size: 70px;
-            line-height: 1;"
+  <div
+    style="display: flex; flex-direction: column; row-gap: 10px; 
+    align-items: center; justify-content: space-between; 
+    padding-top: 50px; padding-bottom : 50px;"
+      class="
+        list-container
+      "
     >
-        <p style="color: white; text-align: center;
-        padding: 0 200px;">
-            El éxito llega cuando tus sueños son más grandes que tus
-            excusas
-        </p>
-        <button
-
-            class="button black"
-        >
-            <p  style="margin: 0">
-                Regístrate
-            </p>
-        </button>
-    </section>
+      <h1 class="homeTextTitle">Empresas Destacadas</h1>
+      <px-list [users]="enterprises"></px-list>
+      <h1 class="homeTextTitle">Freelancers Destacados</h1>
+      <px-list [users]="freelancers"></px-list>
+      <h1 class="homeTextTitle">Inversores Destacados</h1>
+      <px-list [users]="investors"></px-list>
+    </div>
+  <px-message [isAny]="propsMessage">El éxito llega cuando tus sueños son más grandes que tus
+    excusas</px-message>
 </div>
 
 

@@ -1,21 +1,41 @@
 
-
-.button {
-    font-family: var(--principal-font);
-    padding: 0.9rem 4.5rem;
-    border: 0;
-    border-radius: 3rem;
+.list-container {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.homeTextTitle {
+  padding: 0 8vw;
+  align-self: flex-start !important;
+  width: 84vw;
+  margin: 20px 0;
+  font-size: 40px;
+  text-align: left;
+  font-family: var(--principal-font);
+}
+.homeTextTitle::after {
+  content: ":";
+}
+@media only screen and (max-width: 1024px) {
+  .homeTextTitle {
+    font-size: 32px;
   }
-  .black {
-    background-color: black;
-    color: white;
+}
+@media only screen and (max-width: 768px) {
+  .homeTextTitle {
+    font-size: 26px;
   }
-  .withBorder {
-    background-color: white;
-    color: black;
-    border: 3px solid black;
+}
+@media only screen and (max-width: 580px) {
+  .homeTextTitle {
+    align-self: center !important;
+    margin: 0 0 5px 0;
   }
-  .white {
-    background-color: white;
-    color: black;
+  .homeTextTitle::after {
+    content: "";
   }
+  .list-container {
+    padding: 30px 0 !important;
+  }
+}

@@ -24,6 +24,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { PxButtonComponent } from "./components/PxButton/PxButton.component";
 import { PxMessageComponent } from "./components/PxMessage/PxMessage.component";
 import { PxPrincipalComponent } from "./components/PxPrincipal/PxPrincipal.component";
+import { PxListComponent } from "./components/PxList/PxList.component";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { PxPrincipalComponent } from "./components/PxPrincipal/PxPrincipal.compo
     PageNotFoundComponent,
     PxButtonComponent,
     PxMessageComponent,
-    PxPrincipalComponent
+    PxPrincipalComponent,
+    PxListComponent
   ],
     imports: [
         BrowserModule,
