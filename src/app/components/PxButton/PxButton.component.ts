@@ -9,10 +9,7 @@ export class PxButtonComponent {
     @Input() color: string;
     @Output() customClick: EventEmitter<any> = new EventEmitter();
 
-    buttonColor: "black"
-    
     buttonClick() {
         this.customClick.emit();
     }
-
 }

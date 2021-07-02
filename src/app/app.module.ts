@@ -32,7 +32,7 @@ import { PxMessageComponent } from "./components/PxMessage/PxMessage.component";
     AboutComponent,
     PageNotFoundComponent,
     PxButtonComponent,
-    PxMessageComponent
+    PxMessageComponent,
   ],
     imports: [
         BrowserModule,

@@ -26,22 +26,8 @@
         ipsum dolor sit amet.
       </p>
     </section>
-    <section
-        style="background: url('../../assets/messageBackground-6.png'); display: flex; flex-direction: column; 
-        justify-content: center; align-items: center; width: 100vw; 
-            background-size: 1500px auto;
-            background-position: center;
-            height: 500px;
-            font-family: var(--principal-font);
-            font-size: 70px;
-            line-height: 1;"  
-    >
-        <p style="color: white; text-align: center; 
-        padding: 0 200px;">
-            "En 2NEL encontré la oportunidad para crecer
-            profesionalmente"
-        </p>
-    </section>
+    <px-message [isAny]="noButtonOtherImage">"En 2NEL encontré la oportunidad para crecer
+      profesionalmente"</px-message>
     <section
         style="display: flex; justify-content: space-around; align-items: center; padding: 2.5rem; gap: 8rem; text-align: justify;"
     >
@@ -70,21 +56,6 @@
         </p>
       </div>
     </section>
-    <section
-        style="background: url('../../assets/messageBackground-4.png'); display: flex; flex-direction: column; 
-        justify-content: center; align-items: center; width: 100vw; 
-            background-size: 1500px auto;
-            background-position: center;
-            height: 500px;
-            font-family: var(--principal-font);
-            font-size: 70px;
-            line-height: 1;"  
-    >
-        <p style="color: white; text-align: center; 
-        padding: 0 200px;">
-            El éxito llega cuando tus sueños son más grandes que tus
-            excusas
-        </p>
-        <px-button [color]="'black'">Regístrate</px-button>
-    </section>
+    <px-message [isAny]="withButton">El éxito llega cuando tus sueños son más grandes que tus
+      excusas</px-message>
   </div>
