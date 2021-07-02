@@ -1,0 +1,54 @@
+
+section {
+    height: 385px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .card {
+    height: 100%;
+    width: 27vw;
+    min-width: 32.5%;
+  }
+  img {
+    height: 190px;
+    width: auto;
+  }
+  h1 {
+    font-size: 25px;
+    font-family: var(--principal-font);
+  }
+  p {
+    font-size: 16px;
+    font-family: var(--text-font);
+  }
+  small {
+    font-size: 15px;
+    font-family: var(--text-font);
+  }
+  @media only screen and (max-width: 1024px) {
+    h1 {
+      font-size: 24px;
+      height: 6rem;
+    }
+    p {
+      font-size: 15px;
+    }
+    small {
+      font-size: 14px;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .card {
+      height: 100%;
+      min-width: 50%;
+    }
+  }
+  @media only screen and (max-width: 580px) {
+    .card {
+      height: 100%;
+      min-width: 100%;
+    }
+    h1 {
+      height: 30px;
+    }
+  }

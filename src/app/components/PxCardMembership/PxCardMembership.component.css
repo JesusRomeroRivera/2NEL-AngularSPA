@@ -4,6 +4,7 @@ h1 {
   font-size: 40px;
 }
 .theCard {
+  width: 100%;
   display: grid;
   grid-template-rows: 4fr 4fr 2fr;
 }
@@ -11,7 +12,7 @@ h1 {
   font-family: var(--text-font);
   border-left: 2px solid black;
   border-right: 2px solid black;
-  height: 220px;
+  height: 200px;
 }
 .theBotton {
   border-bottom: 2px solid black;
@@ -20,7 +21,7 @@ h1 {
 }
 @media only screen and (max-width: 1024px) {
   .theText {
-    height: 240px;
+    height: 220px;
   }
   h1 {
     font-size: 26px;
@@ -38,5 +39,8 @@ h1 {
 @media only screen and (max-width: 768px) {
   .theText {
     height: auto;
+  }
+  .theCard{
+    width: 80vw;
   }
 }

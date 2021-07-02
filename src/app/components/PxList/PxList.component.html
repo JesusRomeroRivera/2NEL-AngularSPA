@@ -1,0 +1,16 @@
+<section style="display: flex; 	column-gap: 10px; 	width: 82vw">
+    <article style="display: flex; flex-direction: column; width: 32.5%;" class="card" *ngFor="let us of users" :key="u.name">
+      <img style="--tw-bg-opacity: 1;
+      background-color: rgba(229, 231, 235, var(--tw-bg-opacity));" [src]="us.imageUrl" />
+      <div style="padding: 20px;" class="text-container">
+        <h1>{{ us.firstName }}{{ us.name }} {{ us.lastName }}</h1>
+        <p class="my-8">
+          {{ us.description.substring(0, 40)
+          }}{{ us.description.length > 50 ? "..." : "" }}
+        </p>
+        <small class="text-gray-700"
+          >De: {{ us.city }}{{ us.businessEmail }}</small
+        >
+      </div>
+    </article>
+  </section>

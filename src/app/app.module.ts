@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import {ErrorComponent} from "./pages/error/error.component";
 import {SignupComponent} from "./pages/signup/signup.component";
+import { LoginComponent } from './pages/login/login.component';
 import { MembershipComponent } from './pages/membership/membership.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -24,13 +25,15 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { HttpClientModule } from "@angular/common/http";
 import { MatTooltipModule } from "@angular/material/tooltip";
 
+
 import { PxButtonComponent } from "./components/PxButton/PxButton.component";
 import { PxMessageComponent } from "./components/PxMessage/PxMessage.component";
-import {PxPrincipalComponent} from "./components/PxPrincipal/PxPrincipal.component";
-import {PxFooterComponent} from "./components/PxFooter/PxFooter.component";
-import {PxIconComponent} from "./components/PxIcon/PxIcon.component";
-import {PxMembershipComponent} from "./components/PxMembership/PxMembership.component";
-import {PxCardMembershipComponent} from "./components/PxCardMembership/PxCardMembership.component";
+import { PxPrincipalComponent } from "./components/PxPrincipal/PxPrincipal.component";
+import { PxListComponent } from "./components/PxList/PxList.component";
+import { PxFooterComponent} from "./components/PxFooter/PxFooter.component";
+import { PxIconComponent} from "./components/PxIcon/PxIcon.component";
+import { PxMembershipComponent} from "./components/PxMembership/PxMembership.component";
+import { PxCardMembershipComponent} from "./components/PxCardMembership/PxCardMembership.component";
 
 @NgModule({
   declarations: [
@@ -39,9 +42,12 @@ import {PxCardMembershipComponent} from "./components/PxCardMembership/PxCardMem
     HomeComponent,
     AboutComponent,
     MembershipComponent,
+    LoginComponent,
     PageNotFoundComponent,
     PxButtonComponent,
     PxMessageComponent,
+    PxPrincipalComponent,
+    PxListComponent,
     PxMembershipComponent,
     PxCardMembershipComponent,
     PxPrincipalComponent,

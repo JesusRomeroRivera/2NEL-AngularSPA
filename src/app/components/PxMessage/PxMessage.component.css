@@ -20,8 +20,8 @@
   padding: 0 200px;
 }
 .TextStartup {
-  margin-bottom: -30px;
-  font-family: var(--principal-font);
+  margin-bottom: -15px !important;
+  font-family: var(--principal-font) !important;
 }
 .Message {
   background-size: 1500px auto;
@@ -49,7 +49,7 @@
     padding: 0 80px;
   }
   .TextStartup {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
 }
 @media only screen and (max-width: 580px) {
