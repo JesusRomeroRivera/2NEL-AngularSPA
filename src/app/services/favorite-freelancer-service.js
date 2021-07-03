@@ -2,6 +2,7 @@ import http from "./http";
 
 class FavoriteFreelancerService {
   assign(userId, favoriteId) {
+    
     return http.post(`/profiles/${userId}/favoriteFreelancers/${favoriteId}`);
   }
 

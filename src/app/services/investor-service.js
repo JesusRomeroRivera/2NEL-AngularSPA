@@ -13,6 +13,9 @@ class InvestorService {
   update(id, data) {
     return http.put(`/investors/${id}`, data);
   }
+  getFavorites(userId){
+    return http.get(`/api/profiles/${userId}/favoriteInvestors`)
+  }
 }
 
 export default new InvestorService();

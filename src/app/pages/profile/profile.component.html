@@ -33,17 +33,23 @@
             </div>
           </div>
           <div class="descriptionDetail mt-4">
-            <h2 class="topMargin">Descripción</h2>
+            <h2 class="topMargin">Descripción: </h2>
             <p *ngIf="!update" class="small">
               {{ this.userInformation.description }}
             </p>
             <input [(ngModel)]="description" style="width: 80%;" *ngIf="update" type="text">
-            <h2 class="topMargin">Habilidades</h2>
-            <div class="skillsList flex gap-2">
-              <p class="indiText">
-                {{ this.userInformation.specialty }}
+            <h2 class="topMargin">Habilidades: <small *ngIf="update">Agregue con guion </small> <div style="display: inline;" *ngIf="update" class="skillsList flex gap-2">
+              <p class="indiText" *ngFor="let skill of skills; let i = index">
+                {{ skill.name }} <small (click)="deleteSkill(i, skill.id)"> X</small>
+              </p>
+            </div></h2>
+            <div *ngIf="!update" class="skillsList flex gap-2">
+              <p class="indiText" *ngFor="let skill of skills">
+                {{ skill.name }}
               </p>
             </div>
+            <input [(ngModel)]="skillText" style="width: 30%;" *ngIf="update" type="text">
+            <px-button (click)="agregarSkill()" style="display: inline; padding: 0; margin-left: 10px;" [color]="'white'" *ngIf="update" type="text">Agregar Tag</px-button>
             <h2 *ngIf="this.type == 'freelancer' && !update" class="topMargin">Especialidad: 
               <p style="display: inline;" class="small">{{ this.userInformation.specialty }}</p>
               <input [(ngModel)]="specialty" style="width: 80%;" *ngIf="update" type="text">

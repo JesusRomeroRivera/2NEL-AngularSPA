@@ -13,6 +13,9 @@ class EntrepreneurService {
   update(id, data) {
     return http.put(`/entrepreneurs/${id}`, data);
   }
+  getFavorites(userId){
+    return http.get(`/api/profiles/${userId}/favoriteEntrepreneurs`)
+  }
 }
 
 export default new EntrepreneurService();

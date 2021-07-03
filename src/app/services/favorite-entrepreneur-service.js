@@ -1,8 +1,9 @@
 import http from "./http";
 
 class FavoriteEntrepreneurService {
-  assign(userId, favoriteId) {
-    return http.post(`/profiles/${userId}/favoriteEntrepreneurs/${favoriteId}`);
+
+  create(userId, favoriteId) {
+    return http.post(`/api/profiles/${userId}/favoriteEntrepreneurs/${favoriteId}`);
   }
 
   unassaign(userId, favoriteId) {

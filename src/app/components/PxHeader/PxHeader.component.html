@@ -1,7 +1,7 @@
 <header class="shadow">
   <nav *ngIf="getRoute != '/principal' &&
-  getRoute != '/solicitudes' &&
-  getRoute != '/profile' && getRoute != '/profiles'"
+  getRoute != '/favoritos' &&
+  getRoute != '/profile' && getRoute != '/profiles' && getRoute != '/startups'"
       >
     <nav
       style="display:flex; align-items: center;	justify-content: space-between;	flex-wrap: wrap;
@@ -57,8 +57,8 @@
   </nav>
   <nav
     *ngIf="getRoute == '/principal' ||
-        getRoute == '/solicitudes' ||
-        getRoute == '/profile' || getRoute == '/profiles'
+        getRoute == '/favoritos' ||
+        getRoute == '/profile' || getRoute == '/profiles' || getRoute == '/startups'
       "
       >
     <nav style="display:flex; align-items: center;	justify-content: space-between;	flex-wrap: wrap;
@@ -84,7 +84,10 @@
             routerLink="/profile" routerLinkActive="active"
           >Perfil</p
           >
-          <img src="../../assets/iconLupa.png" alt="Lupa" />
+          <p style="margin:0;"
+            routerLink="/favoritos" routerLinkActive="active"
+          >Favoritos</p
+          >
           <div
             (click)="appearLabel()"
             style="display:flex; justify-content: center;	align-items: center; "

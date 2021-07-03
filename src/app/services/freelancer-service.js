@@ -18,6 +18,9 @@ class FreelancerService {
   getAll() {
     return http.get("/freelancers");
   }
+  getFavorites(userId){
+    return http.get(`/api/profiles/${userId}/favoriteFreelancers`);
+  }
 }
 
 export default new FreelancerService();

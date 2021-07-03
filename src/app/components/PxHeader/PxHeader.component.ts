@@ -16,6 +16,7 @@ export class PxHeaderComponent{
   
   get getRoute(){
     if(this.router.url.substring(0, 9) == '/profiles') return '/profiles'
+    if(this.router.url.substring(0, 9) == '/startups') return '/startups'
     return this.router.url;
   }
 

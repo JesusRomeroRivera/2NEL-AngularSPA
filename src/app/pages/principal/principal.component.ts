@@ -4,10 +4,12 @@ import { Router } from '@angular/router';
 import FreelancerService from "../../services/freelancer-service.js";
 import InvestorService from "../../services/investor-service.js";
 import EntrepreneurService from "../../services/entrepreneur-service.js";
+import EnterpriseService from "../../services/enterprise-service.js";
 
 import { FreelancerModel } from "../../models/freelancer-model";
 import { InvestorModel } from "../../models/investor-model";
 import { EntrepreneurModel } from "../../models/entrepreneur-model";
+import { EnterpriseModel } from "../../models/enterprise-model";
 
 @Component({
   selector: 'app-principal',
@@ -18,6 +20,7 @@ export class PrincipalComponent implements OnInit {
   freelancers: Array<FreelancerModel> = [];
   entrepreneurs: Array<EntrepreneurModel> = [];
   investors: Array<InvestorModel> = [];
+  enterprises: Array<EnterpriseModel> = [];
   getDataFreelancer() {
     FreelancerService.getAll()
       .then((response) => {
@@ -48,6 +51,16 @@ export class PrincipalComponent implements OnInit {
         console.log(e);
       });
   }
+  getDataEnterprise() {
+    EnterpriseService.getAll()
+      .then((response) => {
+        console.log(response)
+        this.enterprises = response.data.content;
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }
 
   laruta(){
     console.log(this.routes.url)
@@ -56,6 +69,7 @@ export class PrincipalComponent implements OnInit {
     this.getDataFreelancer();
     this.getDataInvestor();
     this.getDataEntrepreneur();
+    this.getDataEnterprise();
   }
   ngOnInit(): void {
   }

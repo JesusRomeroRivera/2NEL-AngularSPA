@@ -2,18 +2,12 @@
     <section>
         <div style="display: flex; justify-content: space-between; align-items: center;">
           <h1 class="titleTop">Datos del Perfil</h1>
-          <px-button style="border: 1px solid black" 
-          (click)="agregarFavoritos()" 
-          [color]="'white'">
-          Agregar a Favoritos</px-button>
         </div>
         <div style="background-color: black;" class="formDiv">
           <div class="topDetails">
             <div style="color: white; display: flex; flex-direction: column; justify-content: center" class="datosDetails">
-              <h2>Nombres Completos:</h2>
-              <h5>- {{ this.userInformation.firstName }} {{ this.userInformation.lastName }}</h5>
-              <h2>Tipo:</h2>
-              <h5>- {{ this.type.toUpperCase() }}</h5>
+              <h2>Nombre de la Startup:</h2>
+              <h5>- {{ this.userInformation.name.toUpperCase() }}</h5>
             </div>
             <div class="imgDetails flex flex-col items-center">
               <h2 class="text-center">Foto de perfil</h2>
@@ -40,11 +34,11 @@
                 {{ skill.name }}
               </p>
             </div>
-            <h2 *ngIf="this.type == 'freelancer'" class="topMargin">Especialidad: 
-              <p style="display: inline;" class="small">{{ this.userInformation.specialty }}</p>
+            <h2 class="topMargin">Correo de contacto: 
+              <p style="display: inline;" class="small">{{ this.userInformation.businessEmail }}</p>
             </h2>
-            <h2>Ciudad: <h5 style="display: inline; font-family: var(--text-font);">
-              {{ this.userInformation.city }}</h5>
+            <h2>Número de contacto: <h5 style="display: inline; font-family: var(--text-font);">
+              {{ this.userInformation.corpNumber }}</h5>
             </h2>
           </div>
         </div>
