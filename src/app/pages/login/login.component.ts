@@ -36,7 +36,8 @@ export class LoginComponent implements OnInit {
     console.log(this.whatSelected);
     AuthService.auth(this.whatSelected).then((response) => {
       localStorage.setItem("token", response.data.token);
-      localStorage.setItem("user", response.data);
+      localStorage.setItem("user", response.data.id);
+      console.log(localStorage.getItem("token"))
       this.routes.navigate(["/principal"]);/*
       this.$router.push({
         path: "/principal",

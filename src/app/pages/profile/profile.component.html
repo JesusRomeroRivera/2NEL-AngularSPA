@@ -1,0 +1,60 @@
+<div>
+    <section>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h1 class="titleTop">Datos del Perfil</h1> 
+            <px-button style="border: 1px solid black" 
+            (click)="toggleUpdate()" 
+            [color]="'white'">
+            Editar Datos <p style="display: inline;" *ngIf="update">X</p></px-button>
+        </div>
+        <div style="background-color: black;" class="formDiv">
+          <div class="topDetails">
+            <div style="color: white; display: flex; flex-direction: column; justify-content: center" class="datosDetails">
+              <h2>Nombres Completos:</h2> 
+              <h5 *ngIf="!update">- {{ this.userInformation.firstName }} {{ this.userInformation.lastName }}</h5>
+              <input [(ngModel)]="firstName" style="width: 80%;" *ngIf="update" type="text">
+              <input [(ngModel)]="lastName" style="width: 80%;" *ngIf="update" type="text">
+              <h2>Tipo:</h2>
+              <h5>- {{ this.type.toUpperCase() }}</h5>
+            </div>
+            <div class="imgDetails flex flex-col items-center">
+              <h2 class="text-center">Foto de perfil</h2>
+              <img
+                *ngIf="this.userInformation.imageUrl != '' && !update"
+                [src]="this.userInformation.imageUrl"
+                alt="Tu Perfil"
+              />
+              <input [(ngModel)]="imageUrl" style="width: 80%;" *ngIf="update" type="text">
+              <img
+                *ngIf="this.userInformation.imageUrl == '' "
+                src="./../../assets/avatarBlanco.png"
+                alt="Tu Perfil"
+              />
+            </div>
+          </div>
+          <div class="descriptionDetail mt-4">
+            <h2 class="topMargin">Descripción</h2>
+            <p *ngIf="!update" class="small">
+              {{ this.userInformation.description }}
+            </p>
+            <input [(ngModel)]="description" style="width: 80%;" *ngIf="update" type="text">
+            <h2 class="topMargin">Habilidades</h2>
+            <div class="skillsList flex gap-2">
+              <p class="indiText">
+                {{ this.userInformation.specialty }}
+              </p>
+            </div>
+            <h2 *ngIf="this.type == 'freelancer' && !update" class="topMargin">Especialidad: 
+              <p style="display: inline;" class="small">{{ this.userInformation.specialty }}</p>
+              <input [(ngModel)]="specialty" style="width: 80%;" *ngIf="update" type="text">
+            </h2>
+            
+            <h2>Ciudad: <h5  *ngIf="!update" style="display: inline; font-family: var(--text-font);">
+              {{ this.userInformation.city }}</h5>
+              <input [(ngModel)]="city" style="width: 80%;" *ngIf="update" type="text">
+            </h2>
+            <px-button *ngIf="update" (click)="updateApi()" [color]="'white'">Confirmar Datos</px-button>
+          </div>
+        </div>
+  </section>
+</div>

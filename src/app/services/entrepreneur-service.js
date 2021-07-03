@@ -10,6 +10,9 @@ class EntrepreneurService {
   create(id, data) {
     return http.post(`/entrepreneurs?userId=${id}`, data);
   }
+  update(id, data) {
+    return http.put(`/entrepreneurs/${id}`, data);
+  }
 }
 
 export default new EntrepreneurService();

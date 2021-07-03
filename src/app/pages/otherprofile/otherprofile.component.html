@@ -1,0 +1,44 @@
+<div>
+    <section>
+        <div class="flex flex-col items-start justify-start">
+          <h1 class="titleTop">Datos del Perfil</h1>
+        </div>
+        <div style="background-color: black;" class="formDiv">
+          <div class="topDetails">
+            <div style="color: white; display: flex; flex-direction: column; justify-content: center" class="datosDetails">
+              <h2>Nombres Completos:</h2>
+              <h5>- {{ this.userInformation.firstName }} {{ this.userInformation.lastName }}</h5>
+              <h2>Tipo:</h2>
+              <h5>- {{ this.type.toUpperCase() }}</h5>
+            </div>
+            <div class="imgDetails flex flex-col items-center">
+              <h2 class="text-center">Foto de perfil</h2>
+              <img
+                *ngIf="this.userInformation.imageUrl != ''"
+                [src]="this.userInformation.imageUrl"
+                alt="Tu Perfil"
+              />
+              <img
+                *ngIf="this.userInformation.imageUrl == ''"
+                src="./../../assets/avatarBlanco.png"
+                alt="Tu Perfil"
+              />
+            </div>
+          </div>
+          <div class="descriptionDetail mt-4">
+            <h2 class="topMargin">Descripción</h2>
+            <p class="small">
+              {{ this.userInformation.description }}
+            </p>
+            <h2 *ngIf="this.type == 'freelancer'" class="topMargin">Especialidad</h2>
+            <div *ngIf="this.type == 'freelancer'" class="skillsList flex gap-2">
+              <p *ngIf="this.type == 'freelancer'" class="indiText">
+                {{ this.userInformation.specialty }}
+              </p>
+            </div>
+            <h2>Ciudad: </h2>
+            <h5>- {{ this.userInformation.city }}</h5>
+          </div>
+        </div>
+  </section>
+</div>

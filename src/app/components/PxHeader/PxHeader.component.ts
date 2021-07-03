@@ -15,6 +15,7 @@ export class PxHeaderComponent{
   constructor(private router: Router ) { }
   
   get getRoute(){
+    if(this.router.url.substring(0, 9) == '/profiles') return '/profiles'
     return this.router.url;
   }
 

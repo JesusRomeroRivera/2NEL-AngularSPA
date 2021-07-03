@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 
 import FreelancerService from "../../services/freelancer-service.js";
 import InvestorService from "../../services/investor-service.js";
-import EnterpriseService from "../../services/enterprise-service.js";
+import EntrepreneurService from "../../services/entrepreneur-service.js";
 
 import { FreelancerModel } from "../../models/freelancer-model";
 import { InvestorModel } from "../../models/investor-model";
-import { EnterpriseModel } from "../../models/enterprise-model";
+import { EntrepreneurModel } from "../../models/entrepreneur-model";
 
 @Component({
   selector: 'app-principal',
@@ -15,9 +15,8 @@ import { EnterpriseModel } from "../../models/enterprise-model";
   styleUrls: ['./principal.component.css']
 })
 export class PrincipalComponent implements OnInit {
-
   freelancers: Array<FreelancerModel> = [];
-  enterprises: Array<EnterpriseModel> = [];
+  entrepreneurs: Array<EntrepreneurModel> = [];
   investors: Array<InvestorModel> = [];
   getDataFreelancer() {
     FreelancerService.getAll()
@@ -39,11 +38,11 @@ export class PrincipalComponent implements OnInit {
         console.log(e);
       });
   }
-  getDataEnterprise() {
-    EnterpriseService.getAll()
+  getDataEntrepreneur() {
+    EntrepreneurService.getAll()
       .then((response) => {
         console.log(response)
-        this.enterprises = response.data.content;
+        this.entrepreneurs = response.data.content;
       })
       .catch((e) => {
         console.log(e);
@@ -56,7 +55,7 @@ export class PrincipalComponent implements OnInit {
   constructor(private routes: Router){
     this.getDataFreelancer();
     this.getDataInvestor();
-    this.getDataEnterprise();
+    this.getDataEntrepreneur();
   }
   ngOnInit(): void {
   }

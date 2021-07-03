@@ -12,6 +12,8 @@ import { SignupComponent } from "./pages/signup/signup.component";
 import { LoginComponent } from './pages/login/login.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { MembershipComponent } from './pages/membership/membership.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { OtherProfileComponent } from './pages/otherprofile/otherprofile.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatGridListModule } from "@angular/material/grid-list";
@@ -31,6 +33,7 @@ import { PxButtonComponent } from "./components/PxButton/PxButton.component";
 import { PxMessageComponent } from "./components/PxMessage/PxMessage.component";
 import { PxPrincipalComponent } from "./components/PxPrincipal/PxPrincipal.component";
 import { PxListComponent } from "./components/PxList/PxList.component";
+import { PxAnclesListComponent } from "./components/PxAnclesList/PxAnclesList.component";
 import { PxFooterComponent} from "./components/PxFooter/PxFooter.component";
 import { PxIconComponent} from "./components/PxIcon/PxIcon.component";
 import { PxMembershipComponent} from "./components/PxMembership/PxMembership.component";
@@ -58,7 +61,10 @@ import { PxHeaderComponent } from "./components/PxHeader/PxHeader.component";
     PxIconComponent,
     ErrorComponent,
     SignupComponent,
-    PxHeaderComponent
+    PxHeaderComponent,
+    ProfileComponent,
+    OtherProfileComponent,
+    PxAnclesListComponent
   ],
     imports: [
         BrowserModule,

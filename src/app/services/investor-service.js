@@ -10,6 +10,9 @@ class InvestorService {
   create(id, data) {
     return http.post(`/investors?userId=${id}`, data);
   }
+  update(id, data) {
+    return http.put(`/investors/${id}`, data);
+  }
 }
 
 export default new InvestorService();

@@ -7,6 +7,8 @@ import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.com
 import { LoginComponent } from "./pages/login/login.component";
 import { SignupComponent } from "./pages/signup/signup.component";
 import { PrincipalComponent } from './pages/principal/principal.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { OtherProfileComponent } from './pages/otherprofile/otherprofile.component';
 import { StudentsComponent } from "./pages/students/students.component";
 
 const routes: Routes = [
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent },
   { path: 'principal', component: PrincipalComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'profiles/:id', component: OtherProfileComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

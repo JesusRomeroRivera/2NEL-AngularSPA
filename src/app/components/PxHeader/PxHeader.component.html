@@ -1,7 +1,7 @@
 <header class="shadow">
   <nav *ngIf="getRoute != '/principal' &&
   getRoute != '/solicitudes' &&
-  getRoute != '/profile' "
+  getRoute != '/profile' && getRoute != '/profiles'"
       >
     <nav
       style="display:flex; align-items: center;	justify-content: space-between;	flex-wrap: wrap;
@@ -12,7 +12,7 @@
        color: rgba(0, 0, 0, var(--tw-text-opacity)); margin-right: 15px;" class="theImage">
         <px-icon style="margin-right: 5px;"> </px-icon>
         <h3
-          routerLink="/home" routerLinkActive="active"
+          routerLink="/" routerLinkActive="active"
           style="	margin:0; font-size: 18.75px; line-height: 22.5px; 	font-weight: 600;"
           class="header--title"
         >2NEL</h3
@@ -58,7 +58,7 @@
   <nav
     *ngIf="getRoute == '/principal' ||
         getRoute == '/solicitudes' ||
-        getRoute == '/profile'
+        getRoute == '/profile' || getRoute == '/profiles'
       "
       >
     <nav style="display:flex; align-items: center;	justify-content: space-between;	flex-wrap: wrap;
@@ -81,7 +81,7 @@
           >Inicio</p
           >
           <p style="margin:0;"
-            routerLink="/principal" routerLinkActive="active"
+            routerLink="/profile" routerLinkActive="active"
           >Perfil</p
           >
           <img src="../../assets/iconLupa.png" alt="Lupa" />
