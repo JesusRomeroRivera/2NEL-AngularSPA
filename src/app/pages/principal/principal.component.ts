@@ -1,0 +1,63 @@
+import {Component, Input, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
+
+import FreelancerService from "../../services/freelancer-service.js";
+import InvestorService from "../../services/investor-service.js";
+import EnterpriseService from "../../services/enterprise-service.js";
+
+import { FreelancerModel } from "../../models/freelancer-model";
+import { InvestorModel } from "../../models/investor-model";
+import { EnterpriseModel } from "../../models/enterprise-model";
+
+@Component({
+  selector: 'app-principal',
+  templateUrl: './principal.component.html',
+  styleUrls: ['./principal.component.css']
+})
+export class PrincipalComponent implements OnInit {
+
+  freelancers: Array<FreelancerModel> = [];
+  enterprises: Array<EnterpriseModel> = [];
+  investors: Array<InvestorModel> = [];
+  getDataFreelancer() {
+    FreelancerService.getAll()
+      .then((response) => {
+        console.log(response)
+        this.freelancers = response.data.content;
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }
+  getDataInvestor() {
+    InvestorService.getAll()
+      .then((response) => {
+        console.log(response)
+        this.investors = response.data.content;
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }
+  getDataEnterprise() {
+    EnterpriseService.getAll()
+      .then((response) => {
+        console.log(response)
+        this.enterprises = response.data.content;
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }
+
+  laruta(){
+    console.log(this.routes.url)
+  }
+  constructor(private routes: Router){
+    this.getDataFreelancer();
+    this.getDataInvestor();
+    this.getDataEnterprise();
+  }
+  ngOnInit(): void {
+  }
+}

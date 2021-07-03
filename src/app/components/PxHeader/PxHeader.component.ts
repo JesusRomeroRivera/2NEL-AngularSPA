@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, Output} from "@angular/core";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'px-header',
@@ -11,14 +12,18 @@ export class PxHeaderComponent{
   menuOpen: boolean = false
   appearLabelBool: boolean = false
 
+  constructor(private router: Router ) { }
+  
+  get getRoute(){
+    return this.router.url;
+  }
+
   appearLabel() {
     this.appearLabelBool = !this.appearLabelBool;
   }
-  /*closeSesion() {
-    this.$router.push({
-      name: "home",
-    });
-  },*/
+  closeSesion() {
+    this.router.navigate(["/"]);
+  }
   navToggle() {
     const menuBtn = document.querySelector(".menu-btn");
     this.navAppears = !this.navAppears;

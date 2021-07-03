@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
 import AuthService from "../../services/auth-service.js";
 
 @Component({
@@ -35,13 +36,15 @@ export class LoginComponent implements OnInit {
     console.log(this.whatSelected);
     AuthService.auth(this.whatSelected).then((response) => {
       localStorage.setItem("token", response.data.token);
-      localStorage.setItem("user", response.data);/*
+      localStorage.setItem("user", response.data);
+      this.routes.navigate(["/principal"]);/*
       this.$router.push({
         path: "/principal",
         params: {user: response.data.id},
       });*/
     });
   }
+  constructor(private routes: Router){}
   ngOnInit(): void {
   }
 

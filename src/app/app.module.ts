@@ -10,6 +10,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ErrorComponent } from "./pages/error/error.component";
 import { SignupComponent } from "./pages/signup/signup.component";
 import { LoginComponent } from './pages/login/login.component';
+import { PrincipalComponent } from './pages/principal/principal.component';
 import { MembershipComponent } from './pages/membership/membership.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -44,6 +45,7 @@ import { PxHeaderComponent } from "./components/PxHeader/PxHeader.component";
     AboutComponent,
     MembershipComponent,
     LoginComponent,
+    PrincipalComponent,
     PageNotFoundComponent,
     PxButtonComponent,
     PxMessageComponent,

@@ -1,20 +1,8 @@
-
-
-
-
-
-
-
-
-
 <header class="shadow">
-  <nav>
-    <!--*ngIf ="
-        getRoute != 'principal' &&
-        getRoute != 'solicitudes' &&
-        getRoute != 'profile'
-      "-->
-
+  <nav *ngIf="getRoute != '/principal' &&
+  getRoute != '/solicitudes' &&
+  getRoute != '/profile' "
+      >
     <nav
       style="display:flex; align-items: center;	justify-content: space-between;	flex-wrap: wrap;
       background-color: white;	padding: 15px;"
@@ -67,63 +55,45 @@
       </div>
     </nav>
   </nav>
-  <!--<nav
-    *ngIf="
-        this.getRoute == 'principal' ||
-        this.getRoute == 'solicitudes' ||
-        this.getRoute == 'profile'
+  <nav
+    *ngIf="getRoute == '/principal' ||
+        getRoute == '/solicitudes' ||
+        getRoute == '/profile'
       "
-  >
-    <nav
-      class="
-          inOff
-          flex
-          items-center
-          justify-between
-          flex-wrap
-          bg-white-400
-          p-6
-        "
+      >
+    <nav style="display:flex; align-items: center;	justify-content: space-between;	flex-wrap: wrap;
+    background-color: white;	padding: 15px;"
+      class="inOff"
     >
-      <div style="display:flex;	align-items: center;	flex-shrink: 0;	--tw-text-opacity: 1;
-      color: rgba(0, 0, 0, var(--tw-text-opacity)); margin-right: -15px;" class="theImage">
-        <px-icon style=" margin-right: -5px;" />
-        <router-link
-          :to="{
-              name: 'principal',
-              params: { user: this.$route.params.user },
-            }"
-          style="	font-size: 18.75px; line-height: 22.5px; font-weight: 600;"
-          class=" header--title"
-        >2NEL</router-link
+      <div style="display:flex;	align-items: center;	flex-shrink: 0;	margin-right: -15px;" class="theImage">
+        <px-icon style=" margin-right: 5px;"></px-icon>
+        <p
+          routerLink="/principal" routerLinkActive="active"
+          style="margin:0;  font-size: 18.75px; line-height: 22.5px; font-weight: 600;"
+          class="header--title"
+        >2NEL</p
         >
       </div>
       <div class="navBig">
         <div style="display:flex;	gap: 20px; align-items: center;	margin-right: 10px;">
-          <router-link
-            :to="{
-                name: 'principal',
-                params: { user: this.$route.params.user },
-              }"
-          >Inicio</router-link
+          <p style="margin:0;"
+            routerLink="/principal" routerLinkActive="active"
+          >Inicio</p
           >
-          <router-link
-            :to="{
-                name: 'profile',
-                params: { user: this.$route.params.user },
-              }"
-          >Perfil</router-link
+          <p style="margin:0;"
+            routerLink="/principal" routerLinkActive="active"
+          >Perfil</p
           >
           <img src="../../assets/iconLupa.png" alt="Lupa" />
           <div
-            (click)="appearLabel"
+            (click)="appearLabel()"
             style="display:flex; justify-content: center;	align-items: center; "
             class="theFoto"
           >
             <div>V</div>
             <div
               *ngIf="appearLabelBool"
-              (click)="closeSesion"
+              (click)="closeSesion()"
               class="CerrarSesion"
             >
               Cerrar Sesión
@@ -131,26 +101,6 @@
           </div>
         </div>
       </div>
-      <div class="navSmall">
-        <div @click="navToggle" class="menu-btn">
-          <div class="menu-btn__burger"></div>
-        </div>
-        <div
-          *ngIf="navAppears"
-          style="width: 100vw; display:flex;	flex-direction: column; align-items: center;"
-          class="theNav"
-        >
-          <router-link class="itemNav" routerLink="/about" routerLinkActive="active"
-          >Inicio</router-link
-          >
-          <router-link class="itemNav" routerLink="/membership" routerLinkActive="active"
-          >Solicitudes</router-link
-          >
-          <router-link class="itemNav" routerLink="/login" routerLinkActive="active"
-          >StarUps</router-link
-          >
-        </div>
-      </div>
     </nav>
-  </nav> -->
+  </nav>
 </header>

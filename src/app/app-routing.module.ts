@@ -6,6 +6,7 @@ import { AboutComponent } from "./pages/about/about.component";
 import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { SignupComponent } from "./pages/signup/signup.component";
+import { PrincipalComponent } from './pages/principal/principal.component';
 import { StudentsComponent } from "./pages/students/students.component";
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent },
+  { path: 'principal', component: PrincipalComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
